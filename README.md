@@ -1,3 +1,3 @@
 ## Fake Review Generator
 
-<Details TBD>
+Details TBD
