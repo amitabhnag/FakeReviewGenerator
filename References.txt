@@ -1,0 +1,10 @@
+https://github.com/karpathy/char-rnn
+https://towardsdatascience.com/yet-another-text-generation-project-5cfb59b26255
+https://www.analyticsvidhya.com/blog/2018/03/text-generation-using-python-nlp/
+https://larseidnes.com/2015/10/13/auto-generating-clickbait-with-recurrent-neural-networks/
+https://machinelearningmastery.com/text-generation-lstm-recurrent-neural-networks-python-keras/
+https://www.kaggle.com/nolanbconaway/pitchfork-data
+https://www.kaggle.com/nicapotato/womens-ecommerce-clothing-reviews
+https://www.kaggle.com/aashita/nyt-comments
+https://arxiv.org/pdf/cs/0110053.pdf
+https://chunml.github.io/ChunML.github.io/project/Creating-Text-Generator-Using-Recurrent-Neural-Network/
