@@ -2,8 +2,6 @@ numpy
 scipy
 matplotlib
 pandas
-<<<<<<< HEAD
----****--- Toan
 cv2
 ab
 cd
