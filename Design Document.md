@@ -6,8 +6,8 @@
 
 <table>
   <tr>
-    <td>Overview</td>
-    <td>Generate </td>
+    <td>Topic</td>
+    <td>Details </td>
   </tr>
   <tr>
     <td>Top Questions</td>
