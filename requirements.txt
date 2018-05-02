@@ -2,11 +2,11 @@ numpy
 scipy
 matplotlib
 pandas
-<<<<<<< HEAD
----****--- Toan
 cv2
 ab
 cd
 ef
 sl
 amitabh change
+1234
+5678
