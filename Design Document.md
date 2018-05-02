@@ -11,8 +11,7 @@
   </tr>
   <tr>
     <td>Top Questions</td>
-    <td>Question: 
-How to simulate text generation by learning from a dataset of user reviews on Amazon and a music discussion site? <br>
+    <td>How to simulate text generation by learning from a dataset of user reviews on Amazon and a music discussion site? <br>
 </td>
   </tr>
   <tr>
