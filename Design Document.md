@@ -2,6 +2,8 @@
 
 ## Design Document
 
+<img src="/FakeReviewGeneratorArchitecture.jpg" width="500">
+
 <table>
   <tr>
     <td>Overview</td>
