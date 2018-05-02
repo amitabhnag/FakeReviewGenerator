@@ -100,9 +100,11 @@ Outputs: Graph with loss function (possibly)</td> <br>
 <table>
   <tr>
     <td>Technology Choice</td>
-    <td>https://github.com/spro/char-rnn.pytorch <Toan>
-https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py <Amitabh>
-https://github.com/hunkim/word-rnn-tensorflow <Gautam>
+    <td>
+      In progress<br>
+      https://github.com/spro/char-rnn.pytorch <br>
+https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py <br>
+https://github.com/hunkim/word-rnn-tensorflow <br>
 
 Data Sharing <br>
 Machine Learning <br>
