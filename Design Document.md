@@ -16,7 +16,7 @@ How
   </tr>
   <tr>
     <td>Use Cases</td>
-    <td><Toan>
+    <td>
 UC1 - Prepare the data and make sure it is compatible with the training pipeline.<br>
 UC2 - Train the model. User provides a dataset and the script provides training result and training parameters.<br>
 UC3 - Run the model - Use provides a training model, seed word and the script provides the computer-generated reviews.<br>
@@ -27,7 +27,7 @@ For every script, there will be a test script accompanied with it.</td>
   </tr>
   <tr>
     <td>Test Cases</td>
-    <td><Gautam>
+    <td>
 TC1 - Prepare unit test cases for each module and script developed, to ensure each performs consistently as per the requirements. <br>
 TC2 - Prepare integration test cases to ensure the application performs as intended post merging of all the individual components. <br>
 TC3 - Prepare regression test cases to ensure functionality remains unchanged, after code additions and new modifications.<br>
@@ -35,7 +35,7 @@ TC4 - User acceptance testing, for completeness and user sign off as a final del
   </tr>
   <tr>
     <td>Components</td>
-    <td><Toan>
+    <td>
 UC1: Prepare the data <br>
 C1: <br>
 Name: download_data() <br>
@@ -111,11 +111,11 @@ Data Visualization <br>
   </tr>
   <tr>
     <td>Who are the users and what do they know</td>
-    <td><Amitabh></td>
+    <td>In progress</td>
   </tr>
   <tr>
     <td>What information users want from the system</td>
-    <td><Amitabh></td>
+    <td>In progress</td>
   </tr>
 </table>
 
