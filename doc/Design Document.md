@@ -2,7 +2,7 @@
 
 ## Design Document
 
-<img src="/doc/FakeReviewGeneratorArchitecture.jpg" width="900">
+<img src="/doc/FakeReviewGeneratorArchitecture.jpg" width="1000">
 
 <table>
   <tr>
