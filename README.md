@@ -1,3 +1,5 @@
 ## Fake Review Generator
 
-Details TBD
+Design Document: /doc/Design Document.md
+
+More Details: Coming Soon!
