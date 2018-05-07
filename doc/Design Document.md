@@ -2,7 +2,7 @@
 
 ## Design Document
 
-<img src="/FakeReviewGeneratorArchitecture.jpg" width="800">
+<img src="/doc/FakeReviewGeneratorArchitecture.jpg" width="1000">
 
 <table>
   <tr>
@@ -10,7 +10,7 @@
     <td>Details </td>
   </tr>
   <tr>
-    <td>Top Questions</td>
+    <td>Top Question</td>
     <td>How to simulate text generation by learning from a dataset of user reviews on Amazon and a music discussion site? <br>
 </td>
   </tr>
@@ -100,9 +100,11 @@ Outputs: Graph with loss function (possibly)</td> <br>
 <table>
   <tr>
     <td>Technology Choice</td>
-    <td>https://github.com/spro/char-rnn.pytorch <Toan>
-https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py <Amitabh>
-https://github.com/hunkim/word-rnn-tensorflow <Gautam>
+    <td>
+      In progress<br>
+      https://github.com/spro/char-rnn.pytorch <br>
+https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py <br>
+https://github.com/hunkim/word-rnn-tensorflow <br>
 
 Data Sharing <br>
 Machine Learning <br>
