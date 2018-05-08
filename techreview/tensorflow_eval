@@ -1,0 +1,39 @@
+Model Name: Char-nn with Tensorflow
+
+GitHub Repo: https://github.com/sherjilozair/char-rnn-tensorflow
+
+Run - 1
+
+Time to run: 8 hours
+
+Data Set Size: Full dataset - 70mb
+
+Quality of output:
+
+This sink, an option that falls bitch. The title track by playing its own freedom phase to still about being much terribly that Wall, that Das just have never really been hearing the price of full solo down the original trickles of Malkmic’s giants on Tujus Prodigy, but sorta former Homties have shoke jam by Freddie Scisn.Contemporary mutual and, it’s easy to hopefully keep wrong herself.Fall blow my own friend but simply the quicksane hip-hop, getting playfully delivered forces and clas.
+
+No of epochs: 3
+
+Final Train Loss: 1.4
+
+Conclusion: The entire dataset could be trained for only 3 epochs in around 8 hours using a virtual machine with gpu in Aws. The resulting training loss is not ideal, and needs to be further optimized, by figuring out how to reduce the training time.
+
+Run - 2
+
+Time to run: 2 hours
+
+Data Set Size: no special characters/reduced size dataset - 5mb
+
+Quality of output:
+
+apparently to produce allbazz with the occasional traditional particularly laidback drummer john really rhythm as a singersongwriter so often occasionally poorly has released its pretty as the blowfield of such a third regard summit with that much that has only released somewhere between and proven paper lyrics are lucky repetitive drumming on the plan for some sort of trail off your soul as they do in early 80s so long on is positively explicit throughout the tempo ilk veloso deadly was this flusher of be here moves and last nights is some pleasure synths incorporated as the cardighs and sandviching the or hooked up all the songs but when it becomes the consistent chord change that turns not to mention the rest of the fullestruck dc ida record matthew fury and then youll have gratuitously generated where i was born to offer the guy we have to keep things feel by past spacemen 3 greens steven mans grievous gabriels on the status to child and odd results later combined”
+
+No of epochs: 20
+
+Final Train Loss: 1.002
+
+Conclusion: The reduced size dataset of around 5mb with no special characters, could be trained in around 2 hours for 20 epochs, to achieve a final train loss of around 1, which is quite decent. Hyperparameter tuning would be required to optimize it further. 
+Overall, the model has potential, with training time being the major challenge.
+
+
+
