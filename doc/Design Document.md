@@ -2,7 +2,6 @@
 
 ## Design Document
 
-<img src="/doc/FakeReviewGeneratorArchitecture.jpg" width="1000">
 
 <table>
   <tr>
@@ -33,6 +32,11 @@ TC2 - Prepare integration test cases to ensure the application performs as inten
 TC3 - Prepare regression test cases to ensure functionality remains unchanged, after code additions and new modifications.<br>
 TC4 - User acceptance testing, for completeness and user sign off as a final deliverable.</td> <br>
   </tr>
+</table>
+
+<img src="/doc/FakeReviewGeneratorArchitecture.jpg" width="1000">
+
+<table>
   <tr>
     <td>Components</td>
     <td>
@@ -51,6 +55,7 @@ Inputs: .sql database file or .csv file <br>
 Outputs: .txt file <br>
 How use other component: C1 <br>
 Technology: MySQL <br>
+
 UC2: Train <br>
 C1: <br>
 Name: model() <br>
@@ -101,8 +106,8 @@ Outputs: Graph with loss function (possibly)</td> <br>
   <tr>
     <td>Technology Choice</td>
     <td>
-      In progress<br>
-      https://github.com/spro/char-rnn.pytorch <br>
+In progress<br>
+https://github.com/spro/char-rnn.pytorch <br>
 https://github.com/keras-team/keras/blob/master/examples/lstm_text_generation.py <br>
 https://github.com/hunkim/word-rnn-tensorflow <br>
 
