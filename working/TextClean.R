@@ -1,5 +1,6 @@
 #https://rpubs.com/pjmurphy/265713
 #https://www.tidytextmining.com/topicmodeling.html
+#https://github.com/cran/textreg/blob/master/R/clean_text.R
 library(tm)
 toSpace <- content_transformer(function(x, pattern) {return (gsub(pattern,"", x))})
 cname <- file.path("C:\\Users\\amnag\\DATA515\\Project\\word-rnn-tensorflow\\word-rnn-tensorflow\\data\\tinyshakespeare\\input.txt")   

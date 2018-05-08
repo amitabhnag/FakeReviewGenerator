@@ -1,4 +1,4 @@
-Model Name: Char-nn with Tensorflow
+﻿Model Name: Char-nn with Tensorflow
 
 GitHub Repo: https://github.com/sherjilozair/char-rnn-tensorflow
 
@@ -34,6 +34,46 @@ Final Train Loss: 1.002
 
 Conclusion: The reduced size dataset of around 5mb with no special characters, could be trained in around 2 hours for 20 epochs, to achieve a final train loss of around 1, which is quite decent. Hyperparameter tuning would be required to optimize it further. 
 Overall, the model has potential, with training time being the major challenge.
+
+**************************************************************************************************
+Model Name: word-rnn-tensorflow
+
+GitHub Repo: https://github.com/hunkim/word-rnn-tensorflow
+
+Run - 1
+
+Time to run: 1.7 hours
+
+Data Set Size: Partial dataset - 5 mb
+
+Quality of output: frat album soon its what is a criticism with it well have become a 75 not forget that things first purchase is angry sweet reckless and poorly some new effects days they did no problem with our careers on skylarking and radioheads other effort sparhawks points if not to say the ramifications from death cab for cutie turn their website shamelessly contained into the downtrodden elements of it the only one these songs check the trek from the tombs seeks picking a leap back to pretty long moments from its most listenable revealing new genre a photograph and good songs id sound like ever at no records ive been dreading deaf for his pisstakes and misdirection was just too good that the opening tracks here might be the show i was conceived but whereas the hattifatteners fights labels over this record at least if theres only the most weird thing in the background labeled a club done but it goes spastic back in the country and miss sunday experiments that mentioned the entire end of this reviewnow that the next time christening themselves something better toby was as often sorely bad to hear valid tracks by bringing apart the haphazard connection
+
+No of epochs: 50
+
+Final Train Loss: 3.8
+
+Conclusion: This model was only possible to run with partial dataset. With full dataset of 70 MB, the model was very slow and will have taken 5.3 days to train. 
+
+**************************************************************************************************
+Model Name: keras example
+
+GitHub Repo: https://github.com/keras-team/keras
+
+Run - 1
+
+Time to run: NA
+
+Data Set Size: 70 mb
+
+Quality of output: NA
+
+No of epochs: NA
+
+Final Train Loss: NA
+
+Conclusion: It is character based as compared to word. It would have taken 60 hrs on AWS. So did not run. Quality of output for a small data set shakespere was not good too.
+**************************************************************************************************
+
 
 
 
