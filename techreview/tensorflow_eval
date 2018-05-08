@@ -73,7 +73,35 @@ Final Train Loss: NA
 
 Conclusion: It is character based as compared to word. It would have taken 60 hrs on AWS. So did not run. Quality of output for a small data set shakespere was not good too.
 **************************************************************************************************
+Model Name: char-rnn.pytorch
 
+GitHub Repo: https://github.com/spro/char-rnn.pytorch/blob/master/train.py
 
+Run - 1 with GRU model
+
+Time to run: 20 minutes
+
+Dataset Size: 8.6M	./Kaggle_reduced_1.txt
+
+Quality of output: 
+[17m 31s (1700 85%) 1.5630]
+Whant from the little here of swirlized thing than release peeciache the universe with the such most i 
+
+[18m 32s (1800 90%) 1.5426]
+Whole as the mary me center the albums of atrhys as the unsust smoothed to head of the words time pain 
+
+[19m 32s (1900 95%) 1.5491]
+Whaltacrand listen composed may interlood is import with argues it solitar baby of the album content c 
+
+[20m 33s (2000 100%) 1.5147]
+Whance
+ that a delain course the rock by space the
+ piano is experiment that her be a prince you naudi 
+
+No of epochs: 2000
+
+Final Train Loss: 1.5147
+
+Conclusion: this model might be very simple so the output quality is not optimal. However, very quick and simple to train.
 
 
