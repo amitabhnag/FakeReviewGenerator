@@ -104,4 +104,27 @@ Final Train Loss: 1.5147
 
 Conclusion: this model might be very simple so the output quality is not optimal. However, very quick and simple to train.
 
+**************************************************************************************************
+Model Name: char-rnn.pytorch
+
+GitHub Repo: https://github.com/spro/char-rnn.pytorch/blob/master/train.py
+
+Run - 1 with LSTM model
+
+Time to run: 20 minutes
+
+Dataset Size: 8.6M	./Kaggle_reduced_1.txt
+
+Quality of output: 
+[24m 37s (2000 100%) 1.5482]
+Whnotically aural excaring and decase the nearly vibe to beautiful to a two works for the image wellme 
+
+A bassist one to the title for propelley controssons and still explored to were songs and the six the fairly underganey this trans in many and uncunsported and in the original melody to strill of you sense im or on the canity grists the employard this bursters than a blums alternations and strange in the middle rock pronness the deperelses about forcing to suffire and idea bure dorn its hairs could have
+seemed small hooks to one was hes of under inorna michar as records approach of a punk and the music is they be a forebed theres are contrast and that but here slowly as but because it you work posering to best has before the times of live glass to the spidiously off brings to darkes are actually greats accompanity to skipped in the pirectifically cute of a big all have remindsions however wife rasfitionally percepress but himself and dennitionguilie his band but the increaded in aheading fantive into the results ladmine for the processance as a feels with a repressulocing intellike th
+
+No of epochs: 2000
+
+Final Train Loss: 1.5482
+
+Conclusion: this model seems to perform worse than GRU. But again, relatively lightweight and easy to train.
 
