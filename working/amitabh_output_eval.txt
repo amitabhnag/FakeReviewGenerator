@@ -22,3 +22,16 @@ Line 1, column 244, Rule ID: EN_A_VS_AN
 Message: Use 'a' instead of 'an' if the following word doesn't start with a vowel sound, e.g. 'a sentence', 'a university'
 Suggestion: a
 ...onnolly sample hasnt been entities like an trail of time on the silence ten guitar...
+
+>>> import language_check
+>>> with open('word-rnn-raw.txt', 'r') as f: amb_raw = f.read().replace('\n', '')
+... 
+>>> tool = language_check.LanguageTool('en-US')
+>>> matches = tool.check(amb_raw)
+>>> len(matches)
+16
+>>> print(matches[10])
+Line 1, column 826, Rule ID: EN_A_VS_AN
+Message: Use 'an' instead of 'a' if the following word starts with a vowel sound, e.g. 'an article', 'an hour'
+Suggestion: an
+...r aggressive, the that might clear take a omnivorous sophomore release sounding a...
