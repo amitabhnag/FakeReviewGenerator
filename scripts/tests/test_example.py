@@ -1,7 +1,8 @@
 import unittest
+import sys
+sys.path.insert(0, '../')
 
 from utils import TextLoader
-
 
 class TestStringMethods(unittest.TestCase):
 
