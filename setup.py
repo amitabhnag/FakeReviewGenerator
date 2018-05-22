@@ -1,30 +1,41 @@
-import os
-from setuptools import setup, find_packages
-PACKAGES = find_packages()
+from setuptools import setup
 
-# Get version and release info, which is all stored in shablona/version.py
-ver_file = os.path.join('shablona', 'version.py')
-with open(ver_file) as f:
-    exec(f.read())
- 
-opts = dict(name=NAME,
-            maintainer=MAINTAINER,
-            maintainer_email=MAINTAINER_EMAIL,
-            description=DESCRIPTION,
-            long_description=LONG_DESCRIPTION,
-            url=URL,
-            download_url=DOWNLOAD_URL,
-            license=LICENSE,
-            classifiers=CLASSIFIERS,
-            author=AUTHOR,
-            author_email=AUTHOR_EMAIL,
-            platforms=PLATFORMS,
-            version=VERSION,
-            packages=PACKAGES,
-            package_data=PACKAGE_DATA,
-            install_requires=REQUIRES,
-            requires=REQUIRES)
+with open("README", 'r') as f:
+    long_description = f.read()
 
 
-if __name__ == '__main__':
-    setup(**opts)
+--Assumes tensorflow or tensorflow-gpu installed
+pip install tensorforce -e .
+
+--Installs with tensorflow-gpu requirement
+pip install tensorforce[tf_gpu] -e .
+
+--Installs with tensorflow (cpu) requirement
+pip install tensorforce[tf] -e .
+
+-- Install all dependencies from requirements file
+pip install -r requirements.txt
+
+extra_packages = {
+'tensorflow': ['tensorflow>=1.0.1'],
+'tensorflow with gpu': ['tensorflow-gpu>=1.0.1']
+}   
+
+install_requires = [
+'numpy',
+'googletrans'
+]
+
+setup(
+   name='fakereviewgenerator',
+   version='0.1',
+   description='Implementation of a word recurrent neural network using tensorflow to generate fake reviews',
+   license='MIT',
+   long_description=long_description,
+   author='Amitabh Nag, Toan Luong, Gautam Moogimane',
+   author_email='amnag@uw.edu, toanlm@uw.edu, mgautam@uw.edu',
+   url="https://github.com/amitabhnag/FakeReviewGenerator",
+   packages=['scripts'],  
+   install_requires=install_requires, #external packages as dependencies
+   extras_require=extra_packages
+)
