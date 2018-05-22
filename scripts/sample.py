@@ -9,6 +9,7 @@ from six.moves import cPickle
 
 from utils import TextLoader
 from model import Model
+from eval import eval_str
 
 def main():
     parser = argparse.ArgumentParser()
@@ -28,6 +29,8 @@ def main():
                        help='number of samples to print')
     parser.add_argument('--quiet', '-q', default=False, action='store_true',
                        help='suppress printing the prime text (default false)')
+    parser.add_argument('--show_grammar', '-q', default=False, action='store_true',
+                       help='show grammatical errors of the (default false)')    
 
     args = parser.parse_args()
     sample(args)
@@ -45,7 +48,14 @@ def sample(args):
         if ckpt and ckpt.model_checkpoint_path:
             saver.restore(sess, ckpt.model_checkpoint_path)
             for _ in range(args.count):
-              print(model.sample(sess, words, vocab, args.n, args.prime, args.sample, args.pick, args.width, args.quiet))
+				output = model.sample(sess, words, vocab, args.n, args.prime, args.sample, args.pick, args.width, args.quiet)
+				score, matches = eval_str(output)
+				print("===== Grammar Score of Generated Review %i" %score)
+				print(output)
+				if args.show_grammar:
+					for err in matches:
+						print("---")
+						print(err)
 
 if __name__ == '__main__':
     main()

@@ -12,7 +12,7 @@ def eval_txt(file_path, verbose=False):
 		matches = tool.check(data_raw)
 		if verbose and len(matches) > 0:
 			print(matches[random.randint(0, len(matches)-1)])
-		return len(matches)
+		return len(matches), matches
 
 def eval_str(output, verbose=False):
 	if len(output) == 0:
@@ -22,4 +22,4 @@ def eval_str(output, verbose=False):
 		matches = tool.check(output)
 		if verbose and len(matches) > 0:
 			print(random.choice(matches))
-		return len(matches)
+		return len(matches), matches
