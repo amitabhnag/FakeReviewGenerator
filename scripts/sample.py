@@ -10,6 +10,7 @@ from six.moves import cPickle
 from utils import TextLoader
 from model import Model
 from eval import eval_str
+from translate import translate
 
 # Turn off Tensorflow debug output
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -57,8 +58,12 @@ def sample(args):
                                       args.sample, args.pick,
                                       args.width, args.quiet)
                 score, matches = eval_str(output)
-                print("===== Grammar Score of Generated Review %i" %score)
+                print("===== Before GTranslate Smoothing. Grammar Score = %i" %score)
                 print(output)
+                gtranslate_output = translate(output)
+                new_score, new_matches = eval_str(gtranslate_output)
+                print("===== After GTranslate Smoothing. Grammar Score = %i" %new_score)
+                print(translate(gtranslate_output))
                 if args.show_grammar:
                     for err in matches:
                         print("---")
