@@ -30,7 +30,7 @@ def main():
                         help='number of samples to print')
     parser.add_argument('--quiet', '-q', default=False, action='store_true',
                         help='suppress printing the prime text (default false)')
-    parser.add_argument('--show_grammar', '-q', default=False, action='store_true',
+    parser.add_argument('--show_grammar', '-g', default=True, action='store_true',
                         help='show grammatical errors of the (default false)')
 
     args = parser.parse_args()
