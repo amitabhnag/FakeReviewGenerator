@@ -57,7 +57,8 @@ class Model():
             variable_summaries(softmax_b)
             with tf.device("/cpu:0"):
                 embedding = tf.get_variable("embedding", [args.vocab_size, args.rnn_size])
-                inputs = tf.split(tf.nn.embedding_lookup(embedding, self.input_data), args.seq_length, 1)
+                inputs = tf.split(tf.nn.embedding_lookup(embedding,
+                    self.input_data), args.seq_length, 1)
                 inputs = [tf.squeeze(input_, [1]) for input_ in inputs]
 
         def loop(prev, _):
@@ -65,14 +66,16 @@ class Model():
             prev_symbol = tf.stop_gradient(tf.argmax(prev, 1))
             return tf.nn.embedding_lookup(embedding, prev_symbol)
 
-        outputs, last_state = legacy_seq2seq.rnn_decoder(inputs, self.initial_state, cell, loop_function=loop if infer else None, scope='rnnlm')
+        outputs, last_state = legacy_seq2seq.rnn_decoder(inputs,
+            self.initial_state, cell,
+            loop_function=loop if infer else None, scope='rnnlm')
         output = tf.reshape(tf.concat(outputs, 1), [-1, args.rnn_size])
         self.logits = tf.matmul(output, softmax_w) + softmax_b
         self.probs = tf.nn.softmax(self.logits)
         loss = legacy_seq2seq.sequence_loss_by_example([self.logits],
-                [tf.reshape(self.targets, [-1])],
-                [tf.ones([args.batch_size * args.seq_length])],
-                args.vocab_size)
+            [tf.reshape(self.targets, [-1])],
+            [tf.ones([args.batch_size * args.seq_length])],
+            args.vocab_size)
         self.cost = tf.reduce_sum(loss) / args.batch_size / args.seq_length
         tf.summary.scalar("cost", self.cost)
         self.final_state = last_state
@@ -83,7 +86,8 @@ class Model():
         optimizer = tf.train.AdamOptimizer(self.lr)
         self.train_op = optimizer.apply_gradients(zip(grads, tvars))
 
-    def sample(self, sess, words, vocab, num=200, prime='first all', sampling_type=1, pick=0, width=4, quiet=False):
+    def sample(self, sess, words, vocab, num=200, prime='first all',
+        sampling_type=1, pick=0, width=4, quiet=False):
         def weighted_pick(weights):
             t = np.cumsum(weights)
             s = np.sum(weights)
@@ -117,14 +121,14 @@ class Model():
         if pick == 1:
             state = sess.run(self.cell.zero_state(1, tf.float32))
             if not len(prime) or prime == ' ':
-                prime  = random.choice(list(vocab.keys()))
+                prime = random.choice(list(vocab.keys()))
             if not quiet:
                 print(prime)
             for word in prime.split()[:-1]:
                 if not quiet:
                     print(word)
                 x = np.zeros((1, 1))
-                x[0, 0] = vocab.get(word,0)
+                x[0, 0] = vocab.get(word, 0)
                 feed = {self.input_data: x, self.initial_state:state}
                 [state] = sess.run([self.final_state], feed)
 

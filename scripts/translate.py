@@ -18,9 +18,10 @@ translated string in english
 from googletrans import Translator
 
 def translate(word):
-	translator = Translator()
-	chin_text = translator.translate(word,src='en',dest='zh-cn')
-	#print(chin_text.text)
-	eng_text = translator.translate(chin_text.text,src='zh-cn',dest='en')
-	#print(eng_text.text)
-	return eng_text.text
+    translator = Translator()
+    chin_text = translator.translate(word, src='en', dest='zh-cn')
+    #print(chin_text.text)
+    eng_text = translator.translate(chin_text.text, src='zh-cn', dest='en')
+    #print(eng_text.text)
+    return eng_text.text
+    

@@ -87,7 +87,8 @@ class BeamSearch():
             zombie = [s[-1] == eos or len(s) >= maxsample for s in live_samples]
 
             # add zombies to the dead
-            dead_samples += [s for s, z in zip(live_samples, zombie) if z]  # remove first label == empty
+            dead_samples += [s for s, z in zip(live_samples, zombie) if z]
+            # remove first label == empty
             dead_scores += [s for s, z in zip(live_scores, zombie) if z]
             dead_states += [s for s, z in zip(live_states, zombie) if z]
             dead_k = len(dead_samples)
