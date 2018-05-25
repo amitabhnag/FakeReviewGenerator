@@ -11,6 +11,10 @@ from utils import TextLoader
 from model import Model
 from eval import eval_str
 
+# Turn off Tensorflow debug output
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import warnings; warnings.simplefilter('ignore')
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--save_dir', type=str, default='save',
@@ -30,8 +34,8 @@ def main():
                         help='number of samples to print')
     parser.add_argument('--quiet', '-q', default=False, action='store_true',
                         help='suppress printing the prime text (default false)')
-    parser.add_argument('--show_grammar', '-g', default=True, action='store_true',
-                        help='show grammatical errors of the (default false)')
+    parser.add_argument('--show_grammar', '-g', default=False, action='store_true',
+                        help='show grammatical errors of the generated review (default false)')
 
     args = parser.parse_args()
     sample(args)
