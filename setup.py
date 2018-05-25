@@ -4,16 +4,16 @@ with open("README", 'r') as f:
     long_description = f.read()
 
 
---Assumes tensorflow or tensorflow-gpu installed
+# Assumes tensorflow or tensorflow-gpu installed
 pip install tensorforce -e .
 
---Installs with tensorflow-gpu requirement
+# Installs with tensorflow-gpu requirement
 pip install tensorforce[tf_gpu] -e .
 
---Installs with tensorflow (cpu) requirement
+# Installs with tensorflow (cpu) requirement
 pip install tensorforce[tf] -e .
 
--- Install all dependencies from requirements file
+# Install all dependencies from requirements file
 pip install -r requirements.txt
 
 extra_packages = {
