@@ -1,12 +1,28 @@
-from __future__ import print_function
-import numpy as np
-import tensorflow as tf
+""" This module generates a sample text from a trained model. It then
+smoothens the text by using google translate to convert sample text
+from English to Chinese and back to English. This module runs
+grammar check to objectively evaluate the quality of sample text
 
+Functions:
+main: This main() function starts the sampling process. User arguments are
+    parsed and stored in a parser object. parser object is passed
+    to the sample() function to begin model training
+sample: Function to sample from a given an input model. After sampling this
+    function can run google translate smoothing. This smoothing is
+    achieved by first translating sample text from English to Chinese and
+    then from Chinese back to English. This function also runs a grammar
+    check on the sample text to objectively assess the quality of sampled
+    output.
+"""
 import argparse
 import time
 import os
-from six.moves import cPickle
 
+import numpy as np
+import tensorflow as tf
+
+from six.moves import cPickle
+from __future__ import print_function
 from utils import TextLoader
 from model import Model
 from eval import eval_str
@@ -17,6 +33,24 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import warnings; warnings.simplefilter('ignore')
 
 def main():
+    """ This main() function starts the sampling process. User arguments are
+    parsed and stored in a parser object. parser object is passed
+    to the sample() function to begin model training
+
+    Arguments (default values):
+    --save_dir: model directory to load stored checkpointed models
+                from(save)
+    --n: number of words to sample (200)
+    --prime: prime text (' ')
+    --pick: 1 = weighted pick, 2 = beam search pick (1)
+    --width: width of the beam search (4)
+    --sample: 0 to use max at each timestep, 1 to sample at
+              each timestep, 2 to sample on spaces (1)
+    --count: number of samples to print (1)
+    --quiet: suppress printing the prime text (false)
+    --show_grammar: show grammatical errors of the generated review
+                    (false)
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument('--save_dir', type=str, default='save',
                         help='model directory to load stored checkpointed models from')
@@ -42,6 +76,18 @@ def main():
     sample(args)
 
 def sample(args):
+    """
+    Function to sample from a given an input model. After sampling this
+    function can run google translate smoothing. This smoothing is
+    achieved by first translating sample text from English to Chinese and
+    then from Chinese back to English. This function also runs a grammar
+    check on the sample text to objectively assess the quality of sampled
+    output.
+
+    Parameter:
+        args: User provided or default value of arguments received
+        from the main function
+    """
     with open(os.path.join(args.save_dir, 'config.pkl'), 'rb') as f:
         saved_args = cPickle.load(f)
     with open(os.path.join(args.save_dir, 'words_vocab.pkl'), 'rb') as f:
