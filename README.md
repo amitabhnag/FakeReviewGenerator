@@ -94,7 +94,6 @@ Please feel free to:
 * **_Toan Loang_**
 * **_Gautam Moogimane_**
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
