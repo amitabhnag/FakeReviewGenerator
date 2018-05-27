@@ -6,7 +6,10 @@
 <table>
   <tr>
     <td>Topic</td>
-    <td>Details </td>
+    <td>The goal is to train a word recurrrent neural network using Tensorflow, to generate user reviews. <br>
+The data used comes from reviews on Amazon and Pitchfork, and is publicly available. <br>
+Deep Learning and the training of Long Short term memory networks(LSTM) to predict the next word in a sequence is a subject that fascinates, has immense potential in the field of natural language processing, and most importantly gives us an opportunity to learn something new. <br> 
+    </td>
   </tr>
   <tr>
     <td>Top Question</td>
@@ -118,11 +121,12 @@ Data Visualization <br>
   </tr>
   <tr>
     <td>Who are the users and what do they know</td>
-    <td>In progress</td>
+    <td>People interested in simulating AI predictive text to generate user reviews.</td>
   </tr>
   <tr>
     <td>What information users want from the system</td>
-    <td>In progress</td>
+    <td>The system can be used with any dataset, which makes it useful in any field where AI predictive text needs to be generated. 
+    </td>
   </tr>
 </table>
 
