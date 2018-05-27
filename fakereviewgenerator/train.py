@@ -1,16 +1,56 @@
+""" This module trains a rnn, gru, or lstm model based on an input
+dataset. Input dataset is a simple text file containing training text.
+This module can start training from beginning or from a previously
+trained model stored in config.pkl, words_vocab.pkl, checkpoint and
+model.ckpt-* files
+
+Functions:
+main: starts the training process. User arguments are
+      parsed and stored in a parser object. parser object is passed
+      to the train() function to begin model training
+train: Function to train a model given an input dataset. If init_from
+    argument is not none, this function loads a prior saved model
+    and start training from there. Else, it start training a new model
+"""
 from __future__ import print_function
+from six.moves import cPickle
+from utils import TextLoader
+from model import Model
+
 import numpy as np
 import tensorflow as tf
 
 import argparse
 import time
 import os
-from six.moves import cPickle
-
-from utils import TextLoader
-from model import Model
 
 def main():
+    """ This main() function starts the training process. User arguments are
+    parsed and stored in a parser object. parser object is passed
+    to the train() function to begin model training
+
+    Arguments (default values):
+        --data_dir: data directory containing input.txt (../data/pitchfork)
+        --inout_encoding: character encoding of input.txt,
+                        from https://docs.python.org/3/library/
+                        codecs.html#standard-encodings
+        --log_dir: directory containing tensorboard logs (logs)
+        --save_dir: directory to store checkpointed models(save)
+        --rnn_size: size of RNN hidden state(255)
+        --num_layers: number of layers in the RNN(2)
+        --model: rnn, gru, or lstm(lstm)
+        --batch_size: minibatch size(50)
+        --seq_length: RNN sequence length(25)
+        --num_epochs: number of epochs (50)
+        --save_every: save frequency (1000)
+        --grad_clip: clip gradients at this value (5)
+        --learning_rate: learning rate (0.002)
+        --decay_rate: decay rate for rmsprop (0.97)
+        --gpu_mem:% of gpu memory to be allocated to this
+                        process. (66.6%)
+        --init_from: continue training from saved model at
+                            this path
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument('--data_dir', type=str, default='../data/pitchfork',
                         help='data directory containing input.txt')
@@ -59,6 +99,14 @@ def main():
     train(args)
 
 def train(args):
+    """
+    Function to train a model given an input dataset. If init_from
+    argument is not none, this function loads a prior saved model
+    and start training from there. Else, it start training a new model.
+    Parameter:
+        args: User provided or default value of arguments received
+        from the main function
+    """
     data_loader = TextLoader(args.data_dir, args.batch_size, args.seq_length, args.input_encoding)
     args.vocab_size = data_loader.vocab_size
 
