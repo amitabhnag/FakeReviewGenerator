@@ -7,7 +7,22 @@ import numpy as np
 from beam import BeamSearch
 
 class Model():
+    """
+    
+    Functions:
+    __init__: Class initialization
+    sample: 
+    
+    """
     def __init__(self, args, infer=False):
+        """
+        Class initialization. 
+        
+        Parameters:
+        self:
+        args:
+        infer:
+        """
         self.args = args
         if infer:
             args.batch_size = 1
@@ -88,6 +103,9 @@ class Model():
 
     def sample(self, sess, words, vocab, num=200, prime='first all',
         sampling_type=1, pick=0, width=4, quiet=False):
+        """
+        
+        """
         def weighted_pick(weights):
             t = np.cumsum(weights)
             s = np.sum(weights)
