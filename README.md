@@ -137,7 +137,7 @@ FakeReviewGenerator/
      |- ...
   |- .coveragerc
   |- .mailmap
-  |-   .travis.yml
+  |- .travis.yml
   |- .gitignore
   |- LICENSE
   |- Makefile
@@ -161,5 +161,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* The guy whose blog started it all, Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn).
+* The guy whose blog started it all, Andrej Karpathy's [char-rnn model](https://github.com/karpathy/char-rnn).
+* Our code is mostly from Sung Kim's [word-rnn model](https://github.com/hunkim/word-rnn-tensorflow)
 
