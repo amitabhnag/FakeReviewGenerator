@@ -35,6 +35,10 @@ To access all the parameters use `python train.py --help`.
 
 To sample from a checkpointed model, `python sample.py`.
 
+To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
+
+For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
+
 The `_sample.py_` file, also includes a grammer check and google translate module as a post processing step.
 
 One can see the grammer check score, and the output quality improving as the training proceeds. 
@@ -53,6 +57,10 @@ You can use any plain text file as input. To run `python train.py` with a differ
  `python train.py --data_dir=./data/yourfolder/input.txt`.
 
  A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`.
+
+Two datasets were used in this project. One is from Amazon(https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
+
+and the other is from Pitchfork(https://www.kaggle.com/nolanbconaway/pitchfork-data/data).
 
 ### Tuning
 
@@ -146,6 +154,7 @@ FakeReviewGenerator/
   |- appveyor.yml
   |- requirements.txt
   |- setup.py
+  
 ```
 
 ## Authors
