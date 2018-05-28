@@ -87,6 +87,71 @@ Please feel free to:
 * Open a Pull Request
 * Share your success stories and data sets!
 
+## Project Structure
+
+```
+FakeReviewGenerator/
+  |- fakereviewgenerator/
+     |- data/
+        |- test_wu_data/
+           |- ...
+        |- merged.p
+        |- merged_data_sample.csv
+        |- station_data.csv
+        |- test_wsp_clean.csv
+        |- test_wsp_raw.csv
+        |- wsp_cleaned_data.csv
+     |- tests/
+        |- __init__.py
+        |- unittests.py
+     |- AxWx_dashboard.html
+     |- __init__.py
+     |- axwx.py
+     |- dashboard.ipynb
+     |- dashboard_title4.jpg
+     |- get_wu_data.py
+     |- merge_datasets.py
+     |- wsp_cleaning.py
+     |- wu_cleaning.py
+     |- wu_metadata_scraping.py
+     |- wu_metadata_scraping_test.py
+     |- wu_observation_scraping.py
+  |- data/
+     |- tinyshakespeare/
+        |- input.txt
+     |- pitchfork/
+        |- input.txt
+     |- extra_inputs/
+        |- Kaggle_reduced_2.txt
+        |- Kaggle_reduced_3.txt
+  |- doc/
+     |- DesignSpecification.md
+     |- Final Presentation - AxWx.pdf
+     |- FunctionalSpecification.md
+  |- working/
+     |- README.md
+     |- wsp_cleaning.md
+  |- techreview/
+     |- screenshots/
+        |- Screen Shot 2017-06-01 at 11.12.37 AM.png
+        |- Screen Shot 2017-06-01 at 11.19.55 AM.png
+        |- Screen Shot 2017-06-01 at 11.40.20 AM.png
+     |- Logo.png
+     |- WhiteboardMockup.JPG
+     |- axwx-logo.jpg
+     |- mockup2.jpg
+  |- .coveragerc
+  |- .mailmap
+  |-   .travis.yml
+  |- .gitignore
+  |- LICENSE
+  |- Makefile
+  |- README.md
+  |- References.txt
+  |- appveyor.yml
+  |- requirements.txt
+  |- setup.py
+```
 
 ## Authors
 
