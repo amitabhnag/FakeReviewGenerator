@@ -92,30 +92,30 @@ Please feel free to:
 ```
 FakeReviewGenerator/
   |- fakereviewgenerator/
-     |- data/
-        |- test_wu_data/
-           |- ...
-        |- merged.p
-        |- merged_data_sample.csv
-        |- station_data.csv
-        |- test_wsp_clean.csv
-        |- test_wsp_raw.csv
-        |- wsp_cleaned_data.csv
+     |- log/
+        |- .gitignore
+     |- save/
+        |- .gitignore
      |- tests/
+        |- testdata/
+           |- input.txt
+           |- word-rnn-output.txt
         |- __init__.py
-        |- unittests.py
-     |- AxWx_dashboard.html
+        |- test_beam.py
+        |- test_eval.py
+        |- test_example.py
+        |- test_train.py
+        |- test_utils.py
      |- __init__.py
-     |- axwx.py
-     |- dashboard.ipynb
-     |- dashboard_title4.jpg
-     |- get_wu_data.py
-     |- merge_datasets.py
-     |- wsp_cleaning.py
-     |- wu_cleaning.py
-     |- wu_metadata_scraping.py
-     |- wu_metadata_scraping_test.py
-     |- wu_observation_scraping.py
+     |- TextClean.R
+     |- beam.py
+     |- demo.sh
+     |- eval.py
+     |- model.py
+     |- sample.py
+     |- train.py
+     |- translate.py
+     |- utils.py
   |- data/
      |- tinyshakespeare/
         |- input.txt
@@ -125,21 +125,16 @@ FakeReviewGenerator/
         |- Kaggle_reduced_2.txt
         |- Kaggle_reduced_3.txt
   |- doc/
-     |- DesignSpecification.md
-     |- Final Presentation - AxWx.pdf
+     |- Design Document.md
+     |- FakeReviewGeneratorArchitecture.jpg
      |- FunctionalSpecification.md
+     |- techreview/
+        |- Fake Review Generator Technology Evaluation.pptx
+        |- SystemArchitectureDiagram.vsdx
+        |- fake-1726362_1920.jpg
+        |- tensorflow_eval        
   |- working/
-     |- README.md
-     |- wsp_cleaning.md
-  |- techreview/
-     |- screenshots/
-        |- Screen Shot 2017-06-01 at 11.12.37 AM.png
-        |- Screen Shot 2017-06-01 at 11.19.55 AM.png
-        |- Screen Shot 2017-06-01 at 11.40.20 AM.png
-     |- Logo.png
-     |- WhiteboardMockup.JPG
-     |- axwx-logo.jpg
-     |- mockup2.jpg
+     |- ...
   |- .coveragerc
   |- .mailmap
   |-   .travis.yml
@@ -156,7 +151,7 @@ FakeReviewGenerator/
 ## Authors
 
 * **_Amitabh Nag_** 
-* **_Toan Loang_**
+* **_Toan Luong_**
 * **_Gautam Moogimane_**
 
 
