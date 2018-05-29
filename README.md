@@ -35,6 +35,10 @@ To access all the parameters use `python train.py --help`.
 
 To sample from a checkpointed model, `python sample.py`.
 
+To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
+
+For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
+
 The `_sample.py_` file, also includes a grammer check and google translate module as a post processing step.
 
 One can see the grammer check score, and the output quality improving as the training proceeds. 
@@ -53,6 +57,10 @@ You can use any plain text file as input. To run `python train.py` with a differ
  `python train.py --data_dir=./data/yourfolder/input.txt`.
 
  A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`.
+
+Two datasets were used in this project. One is from Amazon(https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
+
+and the other is from Pitchfork(https://www.kaggle.com/nolanbconaway/pitchfork-data/data).
 
 ### Tuning
 
@@ -92,30 +100,30 @@ Please feel free to:
 ```
 FakeReviewGenerator/
   |- fakereviewgenerator/
-     |- data/
-        |- test_wu_data/
-           |- ...
-        |- merged.p
-        |- merged_data_sample.csv
-        |- station_data.csv
-        |- test_wsp_clean.csv
-        |- test_wsp_raw.csv
-        |- wsp_cleaned_data.csv
+     |- log/
+        |- .gitignore
+     |- save/
+        |- .gitignore
      |- tests/
+        |- testdata/
+           |- input.txt
+           |- word-rnn-output.txt
         |- __init__.py
-        |- unittests.py
-     |- AxWx_dashboard.html
+        |- test_beam.py
+        |- test_eval.py
+        |- test_example.py
+        |- test_train.py
+        |- test_utils.py
      |- __init__.py
-     |- axwx.py
-     |- dashboard.ipynb
-     |- dashboard_title4.jpg
-     |- get_wu_data.py
-     |- merge_datasets.py
-     |- wsp_cleaning.py
-     |- wu_cleaning.py
-     |- wu_metadata_scraping.py
-     |- wu_metadata_scraping_test.py
-     |- wu_observation_scraping.py
+     |- TextClean.R
+     |- beam.py
+     |- demo.sh
+     |- eval.py
+     |- model.py
+     |- sample.py
+     |- train.py
+     |- translate.py
+     |- utils.py
   |- data/
      |- tinyshakespeare/
         |- input.txt
@@ -125,24 +133,19 @@ FakeReviewGenerator/
         |- Kaggle_reduced_2.txt
         |- Kaggle_reduced_3.txt
   |- doc/
-     |- DesignSpecification.md
-     |- Final Presentation - AxWx.pdf
+     |- Design Document.md
+     |- FakeReviewGeneratorArchitecture.jpg
      |- FunctionalSpecification.md
+     |- techreview/
+        |- Fake Review Generator Technology Evaluation.pptx
+        |- SystemArchitectureDiagram.vsdx
+        |- fake-1726362_1920.jpg
+        |- tensorflow_eval        
   |- working/
-     |- README.md
-     |- wsp_cleaning.md
-  |- techreview/
-     |- screenshots/
-        |- Screen Shot 2017-06-01 at 11.12.37 AM.png
-        |- Screen Shot 2017-06-01 at 11.19.55 AM.png
-        |- Screen Shot 2017-06-01 at 11.40.20 AM.png
-     |- Logo.png
-     |- WhiteboardMockup.JPG
-     |- axwx-logo.jpg
-     |- mockup2.jpg
+     |- ...
   |- .coveragerc
   |- .mailmap
-  |-   .travis.yml
+  |- .travis.yml
   |- .gitignore
   |- LICENSE
   |- Makefile
@@ -151,12 +154,13 @@ FakeReviewGenerator/
   |- appveyor.yml
   |- requirements.txt
   |- setup.py
+  
 ```
 
 ## Authors
 
 * **_Amitabh Nag_** 
-* **_Toan Loang_**
+* **_Toan Luong_**
 * **_Gautam Moogimane_**
 
 
@@ -166,5 +170,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* The guy whose blog started it all, Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn).
+* The guy whose blog started it all, Andrej Karpathy's [char-rnn model](https://github.com/karpathy/char-rnn).
+* Our code is mostly from Sung Kim's [word-rnn model](https://github.com/hunkim/word-rnn-tensorflow)
 

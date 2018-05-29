@@ -35,7 +35,7 @@ setup(
    author='Amitabh Nag, Toan Luong, Gautam Moogimane',
    author_email='amnag@uw.edu, toanlm@uw.edu, mgautam@uw.edu',
    url="https://github.com/amitabhnag/FakeReviewGenerator",
-   packages=['scripts'],  
+   packages=['fakereviewgenerator'],  
    install_requires=install_requires, #external packages as dependencies
    extras_require=extra_packages
 )
