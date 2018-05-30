@@ -1,7 +1,5 @@
-[run]
-branch = True
-source = shablona/*
-include = shablona/*
-omit = */setup.py
 [report]
-include = shablona/*
+omit =  
+    *__init__*
+exclude_lines =
+    if __name__ == .__main__.:
