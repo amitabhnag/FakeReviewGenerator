@@ -22,8 +22,7 @@ Deep Learning and the training of Long Short term memory networks(LSTM) to predi
 UC1 - Prepare the data and make sure it is compatible with the training pipeline.<br>
 UC2 - Train the model. User provides a dataset and the script provides training result and training parameters.<br>
 UC3 - Run the model - Use provides a training model, seed word and the script provides the computer-generated reviews.<br>
-UC4 - Share results with user. This notebook provides contrast on how model behaves with different datasets.<br>
-UC5 - Provide a diagnostic view of how the model learns the word corpus.<br>
+UC4 - Provide a diagnostic view of how the model learns the word corpus.<br>
 
 For every script, there will be a test script accompanied with it.</td>
   </tr>
