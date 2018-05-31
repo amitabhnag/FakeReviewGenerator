@@ -1,29 +1,33 @@
 from setuptools import setup
 
-with open("README", 'r') as f:
+with open("README.md", 'r') as f:
     long_description = f.read()
 
 
 # Assumes tensorflow or tensorflow-gpu installed
-pip install tensorforce -e .
+#pip install tensorforce -e .
 
 # Installs with tensorflow-gpu requirement
-pip install tensorforce[tf_gpu] -e .
+#pip install tensorforce[tf_gpu] -e .
 
 # Installs with tensorflow (cpu) requirement
-pip install tensorforce[tf] -e .
+#pip install tensorforce[tf] -e .
 
 # Install all dependencies from requirements file
-pip install -r requirements.txt
+#pip install -r requirements.txt
 
-extra_packages = {
-'tensorflow': ['tensorflow>=1.0.1'],
-'tensorflow with gpu': ['tensorflow-gpu>=1.0.1']
-}   
 
 install_requires = [
-'numpy',
-'googletrans'
+'tensorflow>=1.0.1',
+'tensorflow-gpu>=1.0.1'
+'tensorboard>=1.8.0',
+'six>=1.11.0',
+'numpy>=1.14.3',
+'googletrans>=2.2.0',
+'language-check>=1.1',
+'pep8>=1.7.0',
+'pandas>=0.20.3',
+'future>=0.16.0'
 ]
 
 setup(
@@ -36,6 +40,5 @@ setup(
    author_email='amnag@uw.edu, toanlm@uw.edu, mgautam@uw.edu',
    url="https://github.com/amitabhnag/FakeReviewGenerator",
    packages=['fakereviewgenerator'],  
-   install_requires=install_requires, #external packages as dependencies
-   extras_require=extra_packages
+   install_requires=install_requires
 )
