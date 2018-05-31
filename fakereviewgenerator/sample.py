@@ -14,6 +14,8 @@ sample: Function to sample from a given an input model. After sampling this
     check on the sample text to objectively assess the quality of sampled
     output.
 """
+from __future__ import print_function
+
 import argparse
 import time
 import os
@@ -22,7 +24,6 @@ import numpy as np
 import tensorflow as tf
 
 from six.moves import cPickle
-from __future__ import print_function
 from utils import TextLoader
 from model import Model
 from eval import eval_str
