@@ -1,3 +1,11 @@
+"""Tests for utils.py
+
+In utils.py, the class TextLoader consists of 
+
+Example:
+	$ python test_utils.py
+"""
+
 import sys
 sys.path.insert(0, '../')
 import unittest

@@ -43,7 +43,7 @@ def eval_str(output, verbose=False):
         Number of grammer errors, error details
     """
     if len(output) == 0:
-        raise ValueError("File is empty")
+        raise ValueError("String is empty")
     else:
         tool = language_check.LanguageTool('en-US')
         matches = tool.check(output)

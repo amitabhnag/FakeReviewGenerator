@@ -1,4 +1,14 @@
-# -*- coding: utf-8 -*-
+"""Provide utilities functions to support train.py.
+
+The class TextLoader() provides capabilities to load a .txt text corpus to create
+a vocab.pkl and create batches of Numpy tensors to feed into the neural network.
+
+Example:
+    from utils import TextLoader
+    data_loader = TextLoader(data_dir, batch_size, seq_length, encoding)
+
+Code from https://github.com/hunkim/word-rnn-tensorflow.
+"""
 import os
 import codecs
 import collections
@@ -9,6 +19,20 @@ import itertools
 
 class TextLoader():
     def __init__(self, data_dir, batch_size, seq_length, encoding=None):
+        """
+        Initialzize the TextLoader class. Check data directory if vocab.pkl and data.npy files already existed.
+
+        Args:
+            data_dir: directory to store input.txt, vocab.pkl, and data.npy.
+            batch_size: size of tensor batches to feed into the net.
+            seq_length: length of embedding sequence.
+            encoding: encoding type of the input text file. Default None.
+
+		Attributes:
+			data_dir
+			batch_size
+			seq_length
+        """
         self.data_dir = data_dir
         self.batch_size = batch_size
         self.seq_length = seq_length
@@ -30,7 +54,14 @@ class TextLoader():
     def clean_str(self, string):
         """
         Tokenization/string cleaning for all datasets except for SST.
-        Original taken from https://github.com/yoonkim/CNN_sentence/blob/master/process_data
+        
+        Code from https://github.com/yoonkim/CNN_sentence/blob/master/process_data.
+
+        Args:
+            string: input string.
+
+        Returns:
+            clean version of the original string and lower-cased.
         """
         string = re.sub(r"[^가-힣A-Za-z0-9(),!?\'\`]", " ", string)
         string = re.sub(r"\'s", " \'s", string)
@@ -50,7 +81,12 @@ class TextLoader():
     def build_vocab(self, sentences):
         """
         Builds a vocabulary mapping from word to index based on the sentences.
-        Returns vocabulary mapping and inverse vocabulary mapping.
+
+        Args:
+        	sentences: input text paragraph consists of multiple words.
+
+        Returns:
+        	[vocabulary mapping, inverse vocabulary mapping]
         """
         # Build vocabulary
         word_counts = collections.Counter(sentences)
@@ -62,11 +98,22 @@ class TextLoader():
         return [vocabulary, vocabulary_inv]
 
     def preprocess(self, input_file, vocab_file, tensor_file, encoding):
+    	"""
+    	Given an input text file, generate
+
+    	Args:
+
+
+    	Attributes:
+    		vocab
+    		vocab_size
+    		tensor
+    	"""
         with codecs.open(input_file, "r", encoding=encoding) as f:
             data = f.read()
 
         # Optional text cleaning or make them lower case, etc.
-        #data = self.clean_str(data)
+        # data = self.clean_str(data)
         x_text = data.split()
 
         self.vocab, self.words = self.build_vocab(x_text)
@@ -75,7 +122,7 @@ class TextLoader():
         with open(vocab_file, 'wb') as f:
             cPickle.dump(self.words, f)
 
-        #The same operation like this [self.vocab[word] for word in x_text]
+        # The same operation like this [self.vocab[word] for word in x_text]
         # index of words as our basic data
         self.tensor = np.array(list(map(self.vocab.get, x_text)))
         # Save the data to data.npy
