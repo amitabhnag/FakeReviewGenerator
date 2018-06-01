@@ -12,18 +12,11 @@ Usage:
 Output:
 Line 1, column 488, Rule ID: MORFOLOGIK_RULE_EN_US
 Message: Possible spelling mistake found
-Suggestion: in; is; I; it; him; if; km; FM; am; cm; mm; IBM; Jim;
-PM; pm; rim; ID; IQ; id; IMF; dim; IMO; um; imp; aim; gm; vim; GM; Kim;
-Tim; AM; Am; BM; Cm; EM; Fm; HM; IA; IE; IL; IN; IT;
-IV; Ia; In; Io; Ir; It; M; MM; NM; Pm; QM; Sm; TM; Tm; Wm; em; i; ii;
-ism; iv; ix; m; mi; om; rm; i m
 ...f the jam vocal guitar shouts and cries im not really there evokes the course of l...
                                            ^^
 19
 .Line 1, column 101, Rule ID: MORFOLOGIK_RULE_EN_US
 Message: Possible spelling mistake found
-Suggestion: and; as; add; aid; ad; ask; ads; ash; SD; eyed; sad; BSD; LSD;
-AD; ADD; asp; ASL; As; ass; as d
 ...ou relevant ads and job listings. And I asd
                                            ^^^
 1
