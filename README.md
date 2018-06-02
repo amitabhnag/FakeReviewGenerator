@@ -1,7 +1,7 @@
 ## Fake Review Generator
 
 [![Build Status](https://travis-ci.org/amitabhnag/FakeReviewGenerator.svg?branch=master)](https://travis-ci.org/amitabhnag/FakeReviewGenerator)
-[![Coverage Status](https://coveralls.io/repos/github/amitabhnag/FakeReviewGenerator/badge.svg?branch=master)](https://coveralls.io/github/amitabhnag/FakeReviewGenerator?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/amitabhnag/FakeReviewGenerator/badge.svg?branch=master&service=github)](https://coveralls.io/github/amitabhnag/FakeReviewGenerator?branch=master)
 
 
 This project is all about trying to train a word recurrent neural network using Tensorflow.
