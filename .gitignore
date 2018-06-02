@@ -8,6 +8,8 @@ gen_api/
 **/data/pitchfork/vocab.pkl
 **data.npy**
 **vocab.pkl**
+.test_logs
+.test_save
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

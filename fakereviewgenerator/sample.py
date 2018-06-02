@@ -93,6 +93,7 @@ def sample(args):
         saved_args = cPickle.load(f)
     with open(os.path.join(args.save_dir, 'words_vocab.pkl'), 'rb') as f:
         words, vocab = cPickle.load(f)
+    tf.reset_default_graph()
     model = Model(saved_args, True)
     with tf.Session() as sess:
         tf.global_variables_initializer().run()
