@@ -13,7 +13,6 @@ Code from https://github.com/hunkim/word-rnn-tensorflow.
 import sys
 import unittest
 import numpy as np
-sys.path.insert(0, '../')
 
 from beam import BeamSearch
 

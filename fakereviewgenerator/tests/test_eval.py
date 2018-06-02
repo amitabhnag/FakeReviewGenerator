@@ -52,7 +52,6 @@ Author:
 """
 import unittest
 import sys
-sys.path.insert(0, '../')
 
 from eval import eval_txt, eval_str
 
@@ -72,7 +71,7 @@ class TestEvalMethods(unittest.TestCase):
     def test_empty_file(self):
         """Test if input is a non-existed .txt file.
         """
-        print(eval_txt('eh.txt', verbose=True)[0])
+        with self.assertRaises(Exception): eval_txt('eh.txt', verbose=False)
 
     def test_str(self):
         """Test if input is an improper String.
@@ -84,7 +83,7 @@ class TestEvalMethods(unittest.TestCase):
     def test_empty_str(self):
         """Test if input is an empty String.
         """
-        print(eval_str('', verbose=True)[0])
+        with self.assertRaises(Exception): eval_str('', verbose=True)
 
 if __name__ == '__main__':
     unittest.main()

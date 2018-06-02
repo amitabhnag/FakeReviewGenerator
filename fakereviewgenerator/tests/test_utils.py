@@ -35,7 +35,6 @@ import sys
 import unittest
 from collections import Counter
 import numpy as np
-sys.path.insert(0, '../')
 
 from utils import TextLoader
 

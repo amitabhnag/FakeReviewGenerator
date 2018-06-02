@@ -19,7 +19,6 @@ Author:
 import unittest
 import warnings
 import sys
-sys.path.insert(0, '../')
 
 from translate import translate
 

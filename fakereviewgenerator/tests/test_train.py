@@ -24,7 +24,6 @@ Code from https://github.com/hunkim/word-rnn-tensorflow.
 """
 import unittest
 import sys
-sys.path.insert(0, '../')
 
 from utils import TextLoader
 
