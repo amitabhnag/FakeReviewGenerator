@@ -87,27 +87,20 @@ $ tensorboard --logdir=./logs/
 
 Then open a browser to [http://localhost:6006](http://localhost:6006) or the correct IP/Port specified.
 
+## Screenshots
 
-## Contributing
-
-Please feel free to:
-* Leave feedback in the issues
-* Open a Pull Request
-* Share your success stories and data sets!
+<to be added>
 
 ## Project Structure
 
 ```
 FakeReviewGenerator/
-  |- fakereviewgenerator/
+  |- FakeReviewGenerator/
      |- log/
         |- .gitignore
      |- save/
         |- .gitignore
      |- tests/
-        |- testdata/
-           |- input.txt
-           |- word-rnn-output.txt
         |- __init__.py
         |- test_beam.py
         |- test_eval.py
@@ -132,6 +125,11 @@ FakeReviewGenerator/
      |- extra_inputs/
         |- Kaggle_reduced_2.txt
         |- Kaggle_reduced_3.txt
+  |- test_data/
+     |- input.txt
+     |- pitchfork_test
+        |- input.txt
+     |- word-rnn-output.txt
   |- doc/
      |- Design Document.md
      |- FakeReviewGeneratorArchitecture.jpg
@@ -144,17 +142,13 @@ FakeReviewGenerator/
   |- working/
      |- ...
   |- .coveragerc
-  |- .mailmap
   |- .travis.yml
   |- .gitignore
   |- LICENSE
-  |- Makefile
   |- README.md
   |- References.txt
-  |- appveyor.yml
   |- requirements.txt
   |- setup.py
-  
 ```
 
 ## Authors
@@ -163,13 +157,19 @@ FakeReviewGenerator/
 * **_Toan Luong_**
 * **_Gautam Moogimane_**
 
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
 * The guy whose blog started it all, Andrej Karpathy's [char-rnn model](https://github.com/karpathy/char-rnn).
 * Our code is mostly from Sung Kim's [word-rnn model](https://github.com/hunkim/word-rnn-tensorflow)
+
+## Contributing
+
+Please feel free to:
+* Leave feedback in the issues
+* Open a Pull Request
+* Share your success stories and data sets!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
