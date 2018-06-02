@@ -11,6 +11,8 @@ main: starts the training process. User arguments are
 train: Function to train a model given an input dataset. If init_from
     argument is not none, this function loads a prior saved model
     and start training from there. Else, it start training a new model
+
+Code from: https://github.com/hunkim/word-rnn-tensorflow    
 """
 from __future__ import print_function
 from six.moves import cPickle

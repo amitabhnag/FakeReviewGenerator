@@ -1,11 +1,31 @@
+""" This file implements beam search algorithm to sample text.
+The beam search algorithm keeps track of k states (beams) rather
+than just one. It begins with k randomly generated states. At each
+step, all the successors of all k states are generated. If any one
+is a goal, the algorithm halts. Otherwise, it selects the k best
+successors from the complete list and repeats.
+
+Class:
+BeamSearch
+
+Functions:
+__init__: Initializes the beam search
+predict_samples:
+search: Return k samples (beams) and their NLL scores
+
+Code from: https://github.com/hunkim/word-rnn-tensorflow
+"""
+
 import tensorflow as tf
 import numpy as np
 
 
 class BeamSearch():
+    """
+    This class implements beam search algorithm to sample text
+    """
     def __init__(self, predict, initial_state, prime_labels):
         """Initializes the beam search.
-
         Args:
             predict:
                 A function that takes a `sample` and a `state`. It then performs
@@ -24,6 +44,12 @@ class BeamSearch():
         self.prime_labels = prime_labels
 
     def predict_samples(self, samples, states):
+        """ Compute the next-step probabilities and states
+        Parameters:
+        self: pointer to the object calling the predict_samples
+        samples: list of sample words
+        states: cell activation values
+        """
         probs = []
         next_states = []
         for i in range(len(samples)):
@@ -34,10 +60,16 @@ class BeamSearch():
 
     def search(self, oov, eos, k=1, maxsample=4000, use_unk=False):
         """Return k samples (beams) and their NLL scores.
-
         Each sample is a sequence of labels, either ending with `eos` or
         truncated to length of `maxsample`. `use_unk` allow usage of `oov`
         (out-of-vocabulary) label in samples
+        Parameters:
+        self: pointer to the object calling the search
+        oov: out of vocabulary
+        k: width of the beam search (4)
+        maxsample: number of words to sample
+        use_unk: `use_unk` allow usage of `oov` (out-of-vocabulary) label
+                 in samples
         """
 
         # A list of probabilities of our samples.

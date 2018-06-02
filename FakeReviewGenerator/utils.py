@@ -7,7 +7,7 @@ Example:
     from utils import TextLoader
     data_loader = TextLoader(data_dir, batch_size, seq_length, encoding)
 
-Code from https://github.com/hunkim/word-rnn-tensorflow.
+Code from https://github.com/hunkim/word-rnn-tensorflow
 """
 import os
 import codecs

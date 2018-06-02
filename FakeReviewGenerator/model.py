@@ -1,3 +1,22 @@
+""" This module initializes a tensorflow rnn, gru or lstm model.
+It module also provides a sample funtion to extract a sample from
+the trained model
+
+Class:
+Model: This class encapsulates a tensorflow model and provides a method
+to generate sample from a trained model
+
+Functions:
+__init__: creates a list of BasicRNNCell or GRUCell or BasicLSTMCell
+          for each layer. Each layer has the size of rnn_size, which
+          is a parameter. It then creates one MultiRNNCell using the
+          entire list of basic cells
+sample: generate a text sample from a model, based on a priming text
+
+Exception: __init__ raises model type not supported exception
+
+Code from: https://github.com/hunkim/word-rnn-tensorflow
+"""
 import tensorflow as tf
 from tensorflow.contrib import rnn
 from tensorflow.contrib import legacy_seq2seq
@@ -8,20 +27,21 @@ from beam import BeamSearch
 
 class Model():
     """
-    
-    Functions:
-    __init__: Class initialization
-    sample: 
-    
+    This class encapsulates a tensorflow model and provides a method
+    to generate sample from a trained model
     """
     def __init__(self, args, infer=False):
-        """
-        Class initialization. 
-        
+        """ Creates a list of BasicRNNCell or GRUCell or BasicLSTMCell
+        for each layer. Each layer has the size of rnn_size, which is
+        a parameter. It then creates one MultiRNNCell using the entire
+        list of basic cells
         Parameters:
-        self:
-        args:
-        infer:
+        self: pointer to the object calling the __init__
+        args: arguments passed by the user or their default values
+        infer: this function will be applied to the i-th output in
+               order to generate the i+1-st input, and decoder_inputs
+               will be ignored, except for the first element ("GO"
+               symbol)
         """
         self.args = args
         if infer:
@@ -103,8 +123,22 @@ class Model():
 
     def sample(self, sess, words, vocab, num=200, prime='first all',
         sampling_type=1, pick=0, width=4, quiet=False):
-        """
-        
+        """ Generate a text sample from a model, based on a priming
+        text
+        Parameters:
+        self: pointer to the object calling the sample
+        sess: tf session
+        words: list of index mapped to words
+        vocab: list of words mapped to index
+        num: number of words to sample
+        prime: prime text
+        sampling_type: 0 to use max at each timestep, 1 to sample at
+              each timestep, 2 to sample on spaces (1)
+        pick: 1 = weighted pick, 2 = beam search pick (1)
+        width: width of the beam search (4)
+        quiet: suppress printing the prime text (false)
+
+        Return: sampled text
         """
         def weighted_pick(weights):
             t = np.cumsum(weights)

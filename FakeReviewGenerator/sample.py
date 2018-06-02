@@ -13,6 +13,8 @@ sample: Function to sample from a given an input model. After sampling this
     then from Chinese back to English. This function also runs a grammar
     check on the sample text to objectively assess the quality of sampled
     output.
+
+Code motivation from: https://github.com/hunkim/word-rnn-tensorflow    
 """
 from __future__ import print_function
 
@@ -82,8 +84,10 @@ def sample(args):
     achieved by first translating sample text from English to Chinese and
     then from Chinese back to English. This function also runs a grammar
     check on the sample text to objectively assess the quality of sampled
-    output.
-
+    output. Any current tensorflow graph is cleared by this function. 
+    This primarily helps with unit testing of this file, as training is
+    required before sampling. By clearing the graph, train and sample
+    can be called from the same test file
     Parameter:
         args: User provided or default value of arguments received
         from the main function
