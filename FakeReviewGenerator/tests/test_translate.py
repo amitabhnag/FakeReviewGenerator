@@ -18,7 +18,6 @@ Author:
 """
 import unittest
 import warnings
-import sys
 
 from translate import translate
 

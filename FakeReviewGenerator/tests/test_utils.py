@@ -31,7 +31,6 @@ OK
 
 Code from https://github.com/hunkim/word-rnn-tensorflow.
 """
-import sys
 import unittest
 from collections import Counter
 import numpy as np
@@ -79,6 +78,9 @@ class TestUtilsMethods(unittest.TestCase):
                          Counter(list(self.data_loader.y_batches[0][0][:-1])))
         self.assertEqual(Counter(list(self.data_loader.x_batches[0][1][1:])),
                          Counter(list(self.data_loader.y_batches[0][1][:-1])))
+
+    def test_clean_str(self):
+        print(self.data_loader.clean_str("@$)@(toaNs24luoNG"))
 
 if __name__ == '__main__':
     unittest.main()

@@ -10,59 +10,13 @@ Usage:
 Author: Toan Luong, May 2018.
 """
 import unittest
-import sys
 import os
 import warnings
+import time
 
 from utils import TextLoader
-from train import train
-from sample import sample
-
-class TrainParams:
-    """TrainParams class stores various training configurations.
-    """
-    def __init__(self, data_dir='test_data/pitchfork_test', input_encoding=None, log_dir='.test_logs',
-        save_dir='.test_save', rnn_size=256, num_layers=2, model='lstm', batch_size=100,
-        seq_length=25, num_epochs=1, save_every=1000, grad_clip=5., learning_rate=0.002,
-        decay_rate=0.97, gpu_mem=0.8, init_from=None):
-        """Initialize the class with default configurations for easier testing.
-        """
-        if not os.path.exists(log_dir):
-            os.makedirs(log_dir)
-        if not os.path.exists(save_dir):
-            os.makedirs(save_dir)
-        self.data_dir = data_dir
-        self.input_encoding = input_encoding
-        self.log_dir = log_dir
-        self.save_dir = save_dir
-        self.rnn_size = rnn_size
-        self.num_layers = num_layers
-        self.model = model
-        self.batch_size = batch_size
-        self.seq_length = seq_length
-        self.num_epochs = num_epochs
-        self.save_every = save_every
-        self.grad_clip = grad_clip
-        self.learning_rate = learning_rate
-        self.decay_rate = decay_rate
-        self.gpu_mem = gpu_mem
-        self.init_from = init_from
-
-class SampleParams:
-    """SampleParams class stores various sampling configurations.
-    """
-    def __init__(self, save_dir, n=200, prime='', pick=1, width=4, sample=1, count=1, quiet=False, show_grammar=True):
-        """Initialize the class with default configurations for easier testing.
-        """
-        self.save_dir = save_dir
-        self.n = n
-        self.prime = prime
-        self.pick = pick
-        self.width = width
-        self.sample = sample
-        self.count = count
-        self.quiet = quiet
-        self.show_grammar = show_grammar
+from train import create_train_parser, train
+from sample import create_sample_parser, sample
 
 def ignore_warnings(test_func):
     """Turn off ResourceWarnings and DeprecationWarning from Python during for unit tests.
@@ -94,21 +48,51 @@ class TestUtilsMethods(unittest.TestCase):
     """
     @ignore_warnings
     def setUp(self):
-        """Set up various training parameters.
-        
-        Assign the save_dir 
+        """Set up various training and sampling parameters.
         """
-        self.train_params = TrainParams()
-        self.sample_params = SampleParams(save_dir=self.train_params.save_dir)
+        test_log_dir = '.test_logs'
+        test_save_dir = '.test_save'
+        if not os.path.exists(test_log_dir):
+            os.makedirs(test_log_dir)
+        if not os.path.exists(test_save_dir):
+            os.makedirs(test_save_dir)
+        self.train_params = create_train_parser(['--data_dir=test_data/pitchfork_test', '--log_dir=%s' %(test_log_dir),
+            '--save_dir=%s' %(test_save_dir), '--model=gru', '--num_epochs=1', '--batch_size=100', '--gpu_mem=0.8'])
+        self.sample_params = create_sample_parser(['--save_dir=%s'%(self.train_params.save_dir)])
 
     @ignore_warnings
     def test_train(self):
         """Test the train and sample loop.
         """
         print("Begin training for 1 epoch for the file %s..." %self.train_params.data_dir)
+        start = time.time()
         train(self.train_params)
-        print("Finished training!")
-        print("Begin sample from the save_dir %s..." %self.sample_params.save_dir)
+        print("Finished training with after time = %0.3f!" %(time.time()-start))
+
+        print("Begin sampling with random seed word ...")
+        sample(self.sample_params)
+        print("Finished sampling!")
+        
+        print("Begin sampling with beam search pick ...")
+        self.sample_params.pick = 2
+        sample(self.sample_params)
+        print("Finished sampling!")
+
+        print("Begin sampling with max at each time step ...")
+        self.sample_params.sample = 0
+        sample(self.sample_params)
+        print("Finished sampling!")
+
+        print("Begin sampling with spaces ...")
+        self.sample_params.sample = 2
+        sample(self.sample_params)
+        print("Finished sampling!")
+
+        print("Begin sampling with prime word 'why not' ...")
+        self.sample_params.pick = 1
+        self.sample_params.prime = 'why not'
+        self.sample_params.show_grammar = True
+        self.sample_params.sample = 1
         sample(self.sample_params)
         print("Finished sampling!")
 

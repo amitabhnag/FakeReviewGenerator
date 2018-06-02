@@ -19,6 +19,7 @@ from __future__ import print_function
 import argparse
 import time
 import os
+import sys
 
 import numpy as np
 import tensorflow as tf
@@ -33,7 +34,7 @@ from translate import translate
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 import warnings; warnings.simplefilter('ignore')
 
-def main():
+def create_sample_parser(args):
     """ This main() function starts the sampling process. User arguments are
     parsed and stored in a parser object. parser object is passed
     to the sample() function to begin model training
@@ -72,9 +73,7 @@ def main():
                         help='suppress printing the prime text (default false)')
     parser.add_argument('--show_grammar', '-g', default=False, action='store_true',
                         help='show grammatical errors of the generated review (default false)')
-
-    args = parser.parse_args()
-    sample(args)
+    return parser.parse_args(args)
 
 def sample(args):
     """
@@ -118,4 +117,5 @@ def sample(args):
                         print(err)
 
 if __name__ == '__main__':
-    main()
+    sample_args = create_sample_parser(sys.argv[1:])
+    sample(sample_args)

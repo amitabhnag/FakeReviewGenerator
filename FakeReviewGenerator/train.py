@@ -23,8 +23,13 @@ import tensorflow as tf
 import argparse
 import time
 import os
+import sys
 
-def main():
+# Turn off Tensorflow debug output
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+import warnings; warnings.simplefilter('ignore')
+
+def create_train_parser(args):
     """ This main() function starts the training process. User arguments are
     parsed and stored in a parser object. parser object is passed
     to the train() function to begin model training
@@ -95,8 +100,7 @@ def main():
                                                   Note: this file contains absolute paths, be careful when moving files around;
                             'model.ckpt-*'      : file(s) with model definition (created by tf)
                         """)
-    args = parser.parse_args()
-    train(args)
+    return parser.parse_args(args)
 
 def train(args):
     """
@@ -193,4 +197,6 @@ def train(args):
         train_writer.close()
 
 if __name__ == '__main__':
-    main()
+    train_args = create_train_parser(sys.argv[1:])
+    train(train_args)
+    

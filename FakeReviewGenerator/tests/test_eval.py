@@ -51,7 +51,6 @@ Author:
     Toan Luong, May 2018.
 """
 import unittest
-import sys
 
 from eval import eval_txt, eval_str
 
