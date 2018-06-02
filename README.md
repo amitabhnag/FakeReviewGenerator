@@ -9,7 +9,7 @@ This project is all about trying to train a word recurrent neural network using 
 The data that we use is publicly available and comes from two popular sites, Amazon and Pitchfork, and is a collection of 
 user reviews posted on them.
 
-Our goal is to train our model using this data, so as to generate reviews that resemble actual user reviews.
+Our goal is to train our model using this data, so as to generate reviews that resemble actual user reviews. Our model improves the quality of output by using goggle translate. We translate sampled text to Chinese and back to English. This improves text quality. We have implemented a grammar check module that quantifies the output quality. Our translation techniuqe reduce grammar errors by atleast 50-60%.   
 
 Inspired by [word-rnn](https://github.com/hunkim/word-rnn-tensorflow) and
 
