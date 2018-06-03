@@ -1,21 +1,9 @@
+# Setup file for the repo
+
 from setuptools import setup
 
 with open("README.md", 'r') as f:
     long_description = f.read()
-
-
-# Assumes tensorflow or tensorflow-gpu installed
-#pip install tensorforce -e .
-
-# Installs with tensorflow-gpu requirement
-#pip install tensorforce[tf_gpu] -e .
-
-# Installs with tensorflow (cpu) requirement
-#pip install tensorforce[tf] -e .
-
-# Install all dependencies from requirements file
-#pip install -r requirements.txt
-
 
 install_requires = [
 'tensorflow>=1.0.1',
