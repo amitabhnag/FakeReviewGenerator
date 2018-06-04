@@ -1,4 +1,3 @@
-Run 
 ## Fake Review Generator
 [![Build Status](https://travis-ci.org/amitabhnag/FakeReviewGenerator.svg?branch=master)](https://travis-ci.org/amitabhnag/FakeReviewGenerator)
 [![Coverage Status](https://coveralls.io/repos/github/amitabhnag/FakeReviewGenerator/badge.svg?branch=master&service=github)](https://coveralls.io/github/amitabhnag/FakeReviewGenerator?branch=master)
@@ -68,6 +67,12 @@ You can use any plain text file as input. To run `python train.py` with a differ
 Two datasets were used in this project. One is from Amazon(https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
 
 and the other is from Pitchfork(https://www.kaggle.com/nolanbconaway/pitchfork-data/data).
+
+In case the dataset has special characters which are not required for training the model, use the file `TextClean.R` to clean the data.
+
+It takes a csv as input, converts it to lower case and removes all characters except letters,numbers and comma(csv format).
+
+The output is a text file.
 
 ### Tuning
 
