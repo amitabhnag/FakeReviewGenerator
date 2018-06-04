@@ -15,10 +15,8 @@ search: Return k samples (beams) and their NLL scores
 
 Code from: https://github.com/hunkim/word-rnn-tensorflow
 """
-
 import tensorflow as tf
 import numpy as np
-
 
 class BeamSearch():
     """

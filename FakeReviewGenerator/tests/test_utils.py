@@ -5,37 +5,13 @@ After initialization of the TextLoader class, the unit tests check for:
     - Integrity of the vocab mapping
     - Lengths of features needs to match those of labels/targets.
 
-Usage:
-    python test_utils.py
-
-test_data/input.txt
-
-this is cat
-I love cat very much
-cat loves me
-
-Output:
-
-reading text file
-(1, 2, 5)
-.reading text file
-{'I': 0, 'cat': 1, 'love': 2} ['I', 'cat', 'love']
-.reading text file
-{'I': 0, 'cat': 1, 'is': 2, 'love': 3, 'loves': 4, 'me': 5, 'much': 6, 'this': 7, 'very': 8}
-[7 2 1 0 3 1 8 6 1 4]
-9
-.
-----------------------------------------------------------------------
-Ran 3 tests in 0.057s
-OK
-
 Code from https://github.com/hunkim/word-rnn-tensorflow.
 """
 import unittest
 from collections import Counter
 import numpy as np
 
-from utils import TextLoader
+from FakeReviewGenerator.utils import TextLoader
 
 class TestUtilsMethods(unittest.TestCase):
     """Unit Test Class for the utils.py script.
@@ -49,14 +25,14 @@ class TestUtilsMethods(unittest.TestCase):
         """Initialize the data_loader object as the TextLoader class with
         input from test_data/input.txt.
         """
-        self.data_loader = TextLoader("test_data", batch_size=2, seq_length=5)
+        self.data_loader = TextLoader("data/test_data", batch_size=2, seq_length=5)
 
     def test_init(self):
         """Print out the 3 main attributes of TextLoader. Make sure they match with (1, 2, 5).
         """
-        print(self.data_loader.vocab)
-        print(self.data_loader.tensor)
-        print(self.data_loader.vocab_size)
+        self.assertTrue(self.data_loader.vocab is not None)
+        self.assertTrue(self.data_loader.tensor is not None)
+        self.assertTrue(self.data_loader.vocab_size > 0)
 
     def test_build_vocab(self):
         """Test for vocab dictionary matches {'I': 0, 'love': 2, 'cat': 1}.
@@ -80,7 +56,9 @@ class TestUtilsMethods(unittest.TestCase):
                          Counter(list(self.data_loader.y_batches[0][1][:-1])))
 
     def test_clean_str(self):
-        print(self.data_loader.clean_str("@$)@(toaNs24luoNG"))
+        """Test for cleaning string.
+        """
+        self.assertTrue(self.data_loader.clean_str("@$)@(toaNs24luoNG") is not None)
 
 if __name__ == '__main__':
     unittest.main()

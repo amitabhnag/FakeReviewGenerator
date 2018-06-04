@@ -2,24 +2,13 @@
 
 There are 3 test cases: a proper sentence, an improper sentence, and an empty sentence.
 
-Usage:
-    python test_translate.py
-
-Output:
-.This website has cookies to provide our services and show you relevant advertisements.
-.We provide services and show related ads
-.
-----------------------------------------------------------------------
-Ran 3 tests in 1.777s
-OK
-
 Author:
     Toan Luong, May 2018.
 """
 import unittest
 import warnings
 
-from translate import translate
+from FakeReviewGenerator.translate import translate
 
 def ignore_warnings(test_func):
     """Turn off ResourceWarnings from Python during for unit tests.
@@ -52,20 +41,24 @@ class TestGTranslate(unittest.TestCase):
     def test_translation(self):
         """Test for GTranslate smoothing of an improper sentence.
         """
-        print(translate('Our services deliver and you to show relevant ads'))
+        out = translate('Our services deliver and you to show relevant ads')
+        print(out)
+        self.assertTrue(len(out) > 0)
 
     @ignore_warnings
     def test_empty(self):
         """Test for GTranslate smoothing of an empty sentence.
         """
-        print(translate(''))
+        self.assertTrue(len(translate('')) == 0)
 
     @ignore_warnings
     def test_sentence(self):
         """Test for GTranslate smoothing of a proper sentence.
         """
-        print(translate('This site have cookies to deliver our services \
-            and to show you relevant ads.'))
+        out = translate('This site have cookies to deliver our services \
+            and to show you relevant ads')
+        print(out)
+        self.assertTrue(len(out) > 0)
 
 if __name__ == '__main__':
     unittest.main()

@@ -2,7 +2,7 @@
 
 Inside the test_data/pitchfork_test, there is input.txt as 1MB text file to train the model.
 The tests will attempt to train the model for 1 epoch and sample a fake music review with a 
-random seed word. 
+random seed word.
 
 Usage:
     python test_train.py
@@ -13,10 +13,9 @@ import unittest
 import os
 import warnings
 import time
-
-from utils import TextLoader
-from train import create_train_parser, train
-from sample import create_sample_parser, sample
+from FakeReviewGenerator.utils import TextLoader
+from FakeReviewGenerator.train import create_train_parser, train
+from FakeReviewGenerator.sample import create_sample_parser, sample
 
 def ignore_warnings(test_func):
     """Turn off ResourceWarnings and DeprecationWarning from Python during for unit tests.
@@ -56,7 +55,7 @@ class TestUtilsMethods(unittest.TestCase):
             os.makedirs(test_log_dir)
         if not os.path.exists(test_save_dir):
             os.makedirs(test_save_dir)
-        self.train_params = create_train_parser(['--data_dir=test_data/pitchfork_test', '--log_dir=%s' %(test_log_dir),
+        self.train_params = create_train_parser(['--data_dir=data/test_data/pitchfork_test', '--log_dir=%s' %(test_log_dir),
             '--save_dir=%s' %(test_save_dir), '--model=gru', '--num_epochs=1', '--batch_size=100', '--gpu_mem=0.8'])
         self.sample_params = create_sample_parser(['--save_dir=%s'%(self.train_params.save_dir)])
 
@@ -95,6 +94,8 @@ class TestUtilsMethods(unittest.TestCase):
         self.sample_params.sample = 1
         sample(self.sample_params)
         print("Finished sampling!")
+
+        self.assertTrue(self.sample_params.save_dir == self.train_params.save_dir)
 
 if __name__ == '__main__':
     unittest.main()

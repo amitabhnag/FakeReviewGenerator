@@ -1,19 +1,11 @@
 """Provide unit tests for the beam.py script.
 
-Usage:
-    python test_beam.py
-
-Output:
-----------------------------------------------------------------------
-Ran 2 tests in 0.001s
-OK
-
 Code from https://github.com/hunkim/word-rnn-tensorflow.
 """
 import unittest
 import numpy as np
 
-from beam import BeamSearch
+from FakeReviewGenerator.beam import BeamSearch
 
 def naive_predict(sample, state):
     """Fake predict function.
