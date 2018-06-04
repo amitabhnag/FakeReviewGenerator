@@ -30,16 +30,15 @@ Run `python setup.py install`. The python file `setup.py` will ensure the requir
 
 ### Basic Usage
 
-1. Activate tensorflow environment: `source activate tensorflow` (note that AWS has a different name for tensorflow environment. Check the name by using `conda env list`) 
-
-2. To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
+1. To train and sample together, use the shell script`demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
    For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
+   Run `chmod 777 demo.sh`
    
    <img src="/doc/demo_command.JPG" width="550" height="30">
 
 
-3. To train with default parameters on the pitchfork dataset, run `python train.py`. 
+2. To train with default parameters on the pitchfork dataset, run `python train.py`. 
 
    To access all the parameters use `python train.py --help`.
 
