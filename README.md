@@ -10,7 +10,7 @@ This project is all about trying to train a word recurrent neural network using 
 The data that we use is publicly available and comes from two popular sites, Amazon and Pitchfork, and is a collection of 
 user reviews posted on them.
 
-Our goal is to train our model using this data, so as to generate reviews that resemble actual user reviews. Our model improves the quality of output by using google translate. We translate sampled text to Chinese and back to English. This improves text quality. We have implemented a grammar check module that quantifies the output quality. Our translation techniuqe reduce grammar errors by atleast 50-60%.   
+Our goal is to train our model using this data, so as to generate reviews that resemble actual user reviews. Our model improves the quality of output by using google translate. We translate sampled text to Chinese and back to English. This improves text quality. We have implemented a grammar check module that quantifies the output quality. Our translation technique reduces grammar errors by atleast 50-60%.   
 
 Inspired by [word-rnn](https://github.com/hunkim/word-rnn-tensorflow) and
 
@@ -18,11 +18,11 @@ Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn).
 
 ## Getting Started
 
-All the python files are inside the /fakereviewgenerator folder.
+All the python files are inside the /FakeReviewGenerator folder.
 
 ### Installation
 
-The python file `setup.py` will ensure the required packages are installed in the local environment. 
+Run `python setup.py install`. The python file `setup.py` will ensure the required packages are installed in the local environment. 
 
 ### Prerequisites
 
@@ -30,15 +30,18 @@ The python file `setup.py` will ensure the required packages are installed in th
 
 ### Basic Usage
 
-To train with default parameters on the pitchfork dataset, run `python train.py`. 
+1. To train and sample together, use the shell script`demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
-To access all the parameters use `python train.py --help`.
+   For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
+   
+   <img src="/doc/demo_command.JPG" width="550" height="30">
 
-To sample from a checkpointed model, `python sample.py`.
 
-To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
+2. To train with default parameters on the pitchfork dataset, run `python train.py`. 
 
-For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
+   To access all the parameters use `python train.py --help`.
+
+   To sample from a checkpointed model, `python sample.py`.
 
 The `_sample.py_` file, also includes a grammer check and google translate module as a post processing step.
 
@@ -62,6 +65,12 @@ You can use any plain text file as input. To run `python train.py` with a differ
 Two datasets were used in this project. One is from Amazon(https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
 
 and the other is from Pitchfork(https://www.kaggle.com/nolanbconaway/pitchfork-data/data).
+
+In case the dataset has special characters which are not required for training the model, use the file `TextClean.R` to clean the data.
+
+It takes a csv as input, converts it to lower case and removes all characters except letters,numbers and comma(csv format).
+
+The output is a text file.
 
 ### Tuning
 
