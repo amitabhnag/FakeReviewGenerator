@@ -1,4 +1,4 @@
-
+Run 
 ## Fake Review Generator
 [![Build Status](https://travis-ci.org/amitabhnag/FakeReviewGenerator.svg?branch=master)](https://travis-ci.org/amitabhnag/FakeReviewGenerator)
 [![Coverage Status](https://coveralls.io/repos/github/amitabhnag/FakeReviewGenerator/badge.svg?branch=master&service=github)](https://coveralls.io/github/amitabhnag/FakeReviewGenerator?branch=master)
@@ -23,7 +23,7 @@ All the python files are inside the /fakereviewgenerator folder.
 
 ### Installation
 
-The python file `setup.py` will ensure the required packages are installed in the local environment. 
+Run `python setup.py install`. The python file `setup.py` will ensure the required packages are installed in the local environment. 
 
 ### Prerequisites
 
