@@ -1,3 +1,4 @@
+
 ## Fake Review Generator
 [![Build Status](https://travis-ci.org/amitabhnag/FakeReviewGenerator.svg?branch=master)](https://travis-ci.org/amitabhnag/FakeReviewGenerator)
 [![Coverage Status](https://coveralls.io/repos/github/amitabhnag/FakeReviewGenerator/badge.svg?branch=master&service=github)](https://coveralls.io/github/amitabhnag/FakeReviewGenerator?branch=master)
@@ -35,6 +36,8 @@ The python file `setup.py` will ensure the required packages are installed in th
 2. To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
    For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
+   
+   <img src="/doc/demo_command.JPG" width="250">
 
 3. To train with default parameters on the pitchfork dataset, run `python train.py`. 
 
