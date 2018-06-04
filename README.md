@@ -37,7 +37,8 @@ The python file `setup.py` will ensure the required packages are installed in th
 
    For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
    
-   <img src="/doc/demo_command.JPG" width="250">
+   <img src="/doc/demo_command.JPG" width="550" height="30">
+
 
 3. To train with default parameters on the pitchfork dataset, run `python train.py`. 
 
