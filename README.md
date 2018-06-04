@@ -33,7 +33,6 @@ Run `python setup.py install`. The python file `setup.py` will ensure the requir
 1. To train and sample together, use the shell script`demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
    For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
-   Run `chmod 777 demo.sh`
    
    <img src="/doc/demo_command.JPG" width="550" height="30">
 
