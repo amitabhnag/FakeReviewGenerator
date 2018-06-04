@@ -31,7 +31,7 @@ The python file `setup.py` will ensure the required packages are installed in th
 
 ### Basic Usage
 
-1. Activate tensorflow environment: `source activate tensorflow` (note that AWS has a different name for tensorflow environment. Check the name by using conda env list) 
+1. Activate tensorflow environment: `source activate tensorflow` (note that AWS has a different name for tensorflow environment. Check the name by using `conda env list`) 
 
 2. To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
