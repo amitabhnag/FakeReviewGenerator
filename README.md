@@ -30,15 +30,17 @@ The python file `setup.py` will ensure the required packages are installed in th
 
 ### Basic Usage
 
-To train with default parameters on the pitchfork dataset, run `python train.py`. 
+1. Activate tensorflow environment: `source activate tensorflow` (note that AWS has a different name for tensorflow environment. Check the name by using conda env list) 
 
-To access all the parameters use `python train.py --help`.
+2. To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
-To sample from a checkpointed model, `python sample.py`.
+   For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
 
-To train and sample together, use the shell script `demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
+3. To train with default parameters on the pitchfork dataset, run `python train.py`. 
 
-For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
+   To access all the parameters use `python train.py --help`.
+
+   To sample from a checkpointed model, `python sample.py`.
 
 The `_sample.py_` file, also includes a grammer check and google translate module as a post processing step.
 
