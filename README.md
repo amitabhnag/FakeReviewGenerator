@@ -12,9 +12,7 @@ user reviews posted on them.
 
 Our goal is to train our model using this data, so as to generate reviews that resemble actual user reviews. Our model improves the quality of output by using google translate. We translate sampled text to Chinese and back to English. This improves text quality. We have implemented a grammar check module that quantifies the output quality. Our translation technique reduces grammar errors by atleast 50-60%.
 
-Inspired by [word-rnn](https://github.com/hunkim/word-rnn-tensorflow) and
-
-Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn).
+Inspired by [word-rnn](https://github.com/hunkim/word-rnn-tensorflow) and Andrej Karpathy's [char-rnn](https://github.com/karpathy/char-rnn).
 
 ## Getting Started
 
@@ -22,7 +20,7 @@ All the python files are inside the /FakeReviewGenerator folder.
 
 ### Installation
 
-Run `python setup.py install`. The python file `setup.py` will ensure the required packages are installed in the local environment. 
+Run `python setup.py install`. The python file `setup.py` will ensure the required packages are installed in the local environment. It has been tested on Linux/Mac system.
 
 ### Prerequisites
 
