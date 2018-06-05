@@ -98,19 +98,19 @@ Then open a browser to [http://localhost:6006](http://localhost:6006) or the cor
 
 * When training for Pitchfork music review dataset begins for the first epoch, the loss value can be seen reduced.
 
-[img](/doc/screenshots/epoch0.png)
+![img](/doc/screenshots/epoch0.png)
 
 * After the first epoch, the outputs before and after Google Translate smoothing are evaluated in terms of their numbers of grammatical errors.
 
-[img](/doc/screenshots/epoch0.png)
+![img](/doc/screenshots/epoch0.png)
 
 * After 10 epochoes, the outputs are much better from the start.
 
-[img](/doc/screenshots/epoch9.png)
+![img](/doc/screenshots/epoch9.png)
 
 * The same model was trained on Amazon food review dataset as shown.
 
-[img](/doc/screenshots/amazon.png)
+![img](/doc/screenshots/amazon.png)
 
 ## Project Structure
 
@@ -177,7 +177,7 @@ FakeReviewGenerator/
 
 Below is the organization chart:
 
-[img](/doc/screenshots/chart.png)
+![img](/doc/screenshots/chart.png)
 
 ## Authors
 
