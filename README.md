@@ -63,7 +63,7 @@ A quick tip to concatenate many small disparate `.txt` files into one large trai
 
 Two datasets were used in this project. One is from Amazon(https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
 
-and the other is from Pitchfork(https://www.kaggle.com/nolanbconaway/pitchfork-data/data).
+and the other is from Pitchfork (https://www.kaggle.com/nolanbconaway/pitchfork-data/data).
 
 In case the dataset has special characters which are not required for training the model, use the file `TextClean.R` to clean the data. It takes a csv as input, converts it to lower case and removes all characters except letters, numbers and comma (for .csv format). The output will be a .txt file.
 
@@ -151,18 +151,15 @@ FakeReviewGenerator/
         |- Kaggle_reduced_3.txt
   |- doc/
      |- Design Document.md
-     |- FakeReviewGeneratorArchitecture.jpg
-     |- FunctionalSpecification.md
      |- techreview/
         |- Fake Review Generator Technology Evaluation.pptx
         |- SystemArchitectureDiagram.vsdx
         |- fake-1726362_1920.jpg
         |- tensorflow_eval   
      |- screenshots/
-     |- final_presentation/
-        |- final_slides.pdf
-  |- working/
-     |- ...
+     |- presentation/
+        |- FinalPresentation-DT512.pdf
+        |- FinalPresentation-DT512.pptx
   |- .coveragerc
   |- .travis.yml
   |- .gitignore
