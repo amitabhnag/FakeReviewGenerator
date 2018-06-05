@@ -10,7 +10,7 @@ This project is all about trying to train a word recurrent neural network using 
 The data that we use is publicly available and comes from two popular sites, Amazon and Pitchfork, and is a collection of 
 user reviews posted on them.
 
-Our goal is to train our model using this data, so as to generate reviews that resemble actual user reviews. Our model improves the quality of output by using google translate. We translate sampled text to Chinese and back to English. This improves text quality. We have implemented a grammar check module that quantifies the output quality. Our translation technique reduces grammar errors by atleast 50-60%.   
+Our goal is to train our model using this data, so as to generate reviews that resemble actual user reviews. Our model improves the quality of output by using google translate. We translate sampled text to Chinese and back to English. This improves text quality. We have implemented a grammar check module that quantifies the output quality. Our translation technique reduces grammar errors by atleast 50-60%.
 
 Inspired by [word-rnn](https://github.com/hunkim/word-rnn-tensorflow) and
 
@@ -33,9 +33,8 @@ Run `python setup.py install`. The python file `setup.py` will ensure the requir
 1. To train and sample together, use the shell script`demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
    For each epoch trained, an output will be printed, so one can see the model getting better as the training progresses.
-   
-   <img src="/doc/demo_command.JPG" width="550" height="30">
 
+   ![img](/doc/screenshots/demo_command.JPG)
 
 2. To train with default parameters on the pitchfork dataset, run `python train.py`. 
 
@@ -55,22 +54,20 @@ To continue training after interruption or to run on more epochs, `python train.
 
 ### Datasets
 
-You can use any plain text file as input. To run `python train.py` with a different file, either replace the existing input file inside
-`./data/pitchfork/`, which is the default directory, or run the code as
+You can use any plain text file as input. To run `python train.py` with a different file, either replace the existing `input.txt` file inside the `data/pitchfork/`, which is the default directory, or run the code as
 
- `python train.py --data_dir=./data/yourfolder/input.txt`.
-
- A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`.
+ ```
+ cd FakeReviewGenerator
+ python train.py --data_dir=../data/yourfolder/input.txt
+ ```
+ 
+A quick tip to concatenate many small disparate `.txt` files into one large training file: `ls *.txt | xargs -L 1 cat >> input.txt`.
 
 Two datasets were used in this project. One is from Amazon(https://www.kaggle.com/snap/amazon-fine-food-reviews/data)
 
 and the other is from Pitchfork(https://www.kaggle.com/nolanbconaway/pitchfork-data/data).
 
-In case the dataset has special characters which are not required for training the model, use the file `TextClean.R` to clean the data.
-
-It takes a csv as input, converts it to lower case and removes all characters except letters,numbers and comma(csv format).
-
-The output is a text file.
+In case the dataset has special characters which are not required for training the model, use the file `TextClean.R` to clean the data. It takes a csv as input, converts it to lower case and removes all characters except letters, numbers and comma (for .csv format). The output will be a .txt file.
 
 ### Tuning
 
@@ -132,14 +129,14 @@ FakeReviewGenerator/
         |- input.txt
      |- pitchfork/
         |- input.txt
+     |- test_data/
+        |- input.txt
+        |- pitchfork_test
+           |- input.txt
+     |- word-rnn-output.txt
      |- extra_inputs/
         |- Kaggle_reduced_2.txt
         |- Kaggle_reduced_3.txt
-  |- test_data/
-     |- input.txt
-     |- pitchfork_test
-        |- input.txt
-     |- word-rnn-output.txt
   |- doc/
      |- Design Document.md
      |- FakeReviewGeneratorArchitecture.jpg
@@ -148,7 +145,10 @@ FakeReviewGenerator/
         |- Fake Review Generator Technology Evaluation.pptx
         |- SystemArchitectureDiagram.vsdx
         |- fake-1726362_1920.jpg
-        |- tensorflow_eval        
+        |- tensorflow_eval   
+     |- screenshots/
+     |- final_presentation/
+        |- final_slides.pdf
   |- working/
      |- ...
   |- .coveragerc
@@ -182,4 +182,3 @@ Please feel free to:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
