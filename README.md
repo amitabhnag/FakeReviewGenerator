@@ -26,7 +26,7 @@ Run `python setup.py install`. The python file `setup.py` will ensure the requir
 
 - [Tensorflow 1.0](http://www.tensorflow.org)
 
-### Basic Usage
+### Example Usage
 
 1. To train and sample together, use the shell script`demo.sh`. The file takes 2 parameters, no of epochs and seed to sample with.
 
