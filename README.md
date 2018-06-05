@@ -173,7 +173,7 @@ FakeReviewGenerator/
   |- setup.py
 ```
 
-Below is the organization chart:
+Below is the architecture diagram:
 
 ![img](/doc/screenshots/chart.png)
 
