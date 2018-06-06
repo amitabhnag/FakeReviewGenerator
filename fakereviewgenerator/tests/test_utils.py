@@ -11,7 +11,7 @@ import unittest
 from collections import Counter
 import numpy as np
 
-from FakeReviewGenerator.utils import TextLoader
+from fakereviewgenerator.utils import TextLoader
 
 class TestUtilsMethods(unittest.TestCase):
     """Unit Test Class for the utils.py script.

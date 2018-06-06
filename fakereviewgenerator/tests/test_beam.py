@@ -5,7 +5,7 @@ Code from https://github.com/hunkim/word-rnn-tensorflow.
 import unittest
 import numpy as np
 
-from FakeReviewGenerator.beam import BeamSearch
+from fakereviewgenerator.beam import BeamSearch
 
 def naive_predict(sample, state):
     """Fake predict function.

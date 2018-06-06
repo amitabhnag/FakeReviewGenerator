@@ -55,7 +55,7 @@ To continue training after interruption or to run on more epochs, `python train.
 You can use any plain text file as input. To run `python train.py` with a different file, either replace the existing `input.txt` file inside the `data/pitchfork/`, which is the default directory, or run the code as
 
  ```
- cd FakeReviewGenerator
+ cd fakereviewgenerator
  python train.py --data_dir=../data/yourfolder/input.txt
  ```
  
@@ -114,7 +114,7 @@ Then open a browser to [http://localhost:6006](http://localhost:6006) or the cor
 
 ```
 FakeReviewGenerator/
-  |- FakeReviewGenerator/
+  |- fakereviewgenerator/
      |- log/
         |- .gitignore
      |- save/

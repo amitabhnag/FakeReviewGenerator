@@ -8,7 +8,7 @@ Author:
 import unittest
 import warnings
 
-from FakeReviewGenerator.translate import translate
+from fakereviewgenerator.translate import translate
 
 def ignore_warnings(test_func):
     """Turn off ResourceWarnings from Python during for unit tests.

@@ -11,7 +11,7 @@ Author:
 """
 import unittest
 
-from FakeReviewGenerator.eval import eval_txt, eval_str
+from fakereviewgenerator.eval import eval_txt, eval_str
 
 class TestEvalMethods(unittest.TestCase):
     """Unit Test Class for the eval.py script.

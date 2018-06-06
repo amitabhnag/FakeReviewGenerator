@@ -13,9 +13,9 @@ import unittest
 import os
 import warnings
 import time
-from FakeReviewGenerator.utils import TextLoader
-from FakeReviewGenerator.train import create_train_parser, train
-from FakeReviewGenerator.sample import create_sample_parser, sample
+from fakereviewgenerator.utils import TextLoader
+from fakereviewgenerator.train import create_train_parser, train
+from fakereviewgeneratorr.sample import create_sample_parser, sample
 
 def ignore_warnings(test_func):
     """Turn off ResourceWarnings and DeprecationWarning from Python during for unit tests.
